@@ -37,9 +37,9 @@ class RegisterViewController: UIViewController {
     }
 }
 
-// MARK: - Binding
-
 extension RegisterViewController {
+    
+// MARK: - Binding
     
     private func bindViewModel() {
         viewModel.registerIsSuccess = { [weak self] success in
@@ -47,18 +47,14 @@ extension RegisterViewController {
                 self?.successViewSetup()
                 self?.successView.isHidden = false
                 self?.error.isHidden = true
-                
             } else {
                 self?.error.text = self?.viewModel.error
                 self?.error.isHidden = false
             }
         }
     }
-}
-
+    
 // MARK: - UI
-
-extension RegisterViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
@@ -68,11 +64,6 @@ extension RegisterViewController {
         errorConfigure()
         toolBarConConfigure()
     }
-}
-
-// MARK: - View
-
-extension RegisterViewController {
     
     private func successViewSetup() {
         let registerSuccessView = RegisterSuccessView(frame: successView.bounds)
@@ -84,11 +75,8 @@ extension RegisterViewController {
         successView.backgroundColor = .gray
         successView.addSubview(registerSuccessView)
     }
-}
 
 // MARK: - Label
-
-extension RegisterViewController {
     
     private func setupLabel() {
         labelConfigure(accountLabel, title: "Account")
@@ -107,10 +95,8 @@ extension RegisterViewController {
         error.textColor = .red
         error.text = "error"
     }
-}
 
 // MARK: - TextField
-extension RegisterViewController {
     
     enum TextFieldType {
         case account
@@ -147,11 +133,8 @@ extension RegisterViewController {
             educationTextField.inputView = pickerView
         }
     }
-}
     
 // MARK: - Button
-    
-extension RegisterViewController {
     
     enum ButtonType {
         case gender
@@ -182,7 +165,7 @@ extension RegisterViewController {
         }
         
     }
-
+    
     private func genderButtonStyle(_ button: UIButton) {
         let config = UIButton.Configuration.plain()
         
@@ -197,12 +180,8 @@ extension RegisterViewController {
         
         button.configuration = config
     }
-    
-}
 
 // MARK: - ToolBar
-
-extension RegisterViewController {
     
     private func toolBarConConfigure() {
         let doneButton = UIBarButtonItem(title: "done", style: .done, target: self, action: #selector(doneButtonDidTap))
@@ -212,13 +191,9 @@ extension RegisterViewController {
         toolbar.sizeToFit()
         educationTextField.inputAccessoryView = toolbar
     }
-}
-
-
+    
 // MARK: - Action
-
-extension RegisterViewController {
-
+    
     @objc private func registerButtonDidTap() {
         viewModel.account = accountTextField.text ?? ""
         viewModel.password = passwordTextField.text ?? ""
@@ -251,8 +226,6 @@ extension RegisterViewController {
         isSelected.isSelected = true
         deSelected.isSelected = false
     }
-    
-    
 }
 
 // MARK: - PickerDataSource
@@ -278,7 +251,6 @@ extension RegisterViewController: UIPickerViewDataSource {
     }
 }
 
-
 // MARK: - RegisterSuccessDelegate
 
 extension RegisterViewController: RegisterSuccessDelegate {
@@ -287,7 +259,6 @@ extension RegisterViewController: RegisterSuccessDelegate {
         self.navigationController?.popViewController(animated: true)
     }
 }
-
 
 protocol RegisterSuccessDelegate: AnyObject {
     func registerSuccess()

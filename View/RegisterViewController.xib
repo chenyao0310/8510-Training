@@ -116,14 +116,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agree rule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mnb-QR-l96">
-                    <rect key="frame" x="121" y="610.66666666666663" width="78" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6c-2j-Ed2" userLabel="circleButton">
-                    <rect key="frame" x="40" y="603.66666666666663" width="65" height="35"/>
+                    <rect key="frame" x="32" y="603" width="65" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
                 </button>
@@ -141,17 +135,23 @@
                         <constraint firstAttribute="height" constant="280" id="Fv8-1i-0gM"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agree rule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mnb-QR-l96">
+                    <rect key="frame" x="105" y="610.66666666666663" width="78" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ckY-IU-viy" firstAttribute="top" secondItem="thC-WU-Z1a" secondAttribute="bottom" constant="60" id="0ji-Jg-0HF"/>
                 <constraint firstItem="i4Z-Jk-xKt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="3dq-cB-EaP"/>
-                <constraint firstItem="T6c-2j-Ed2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="47n-g7-HI2"/>
+                <constraint firstItem="T6c-2j-Ed2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="47n-g7-HI2"/>
                 <constraint firstItem="9aD-rz-BeX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="74" id="67j-qj-OhU"/>
-                <constraint firstItem="Mnb-QR-l96" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="121" id="6Cn-fv-JcE"/>
+                <constraint firstItem="Mnb-QR-l96" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="105" id="6Cn-fv-JcE"/>
                 <constraint firstItem="thC-WU-Z1a" firstAttribute="top" secondItem="9aD-rz-BeX" secondAttribute="bottom" constant="8" id="6V4-2D-rjm"/>
-                <constraint firstItem="Mnb-QR-l96" firstAttribute="leading" secondItem="T6c-2j-Ed2" secondAttribute="trailing" constant="16" id="6vZ-e5-jcR"/>
+                <constraint firstItem="Mnb-QR-l96" firstAttribute="leading" secondItem="T6c-2j-Ed2" secondAttribute="trailing" constant="8" id="6vZ-e5-jcR"/>
                 <constraint firstItem="dgO-bw-ixd" firstAttribute="top" secondItem="QZR-bM-1HC" secondAttribute="bottom" constant="40" id="8MM-Dw-Uah"/>
                 <constraint firstItem="o3b-xo-v2K" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8j4-V8-Fsz"/>
                 <constraint firstItem="QZR-bM-1HC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="8oh-kc-Q59"/>
@@ -167,7 +167,7 @@
                 <constraint firstItem="8ZI-Fv-dcO" firstAttribute="top" secondItem="T6c-2j-Ed2" secondAttribute="bottom" constant="40" id="RHp-DY-oTY"/>
                 <constraint firstItem="thC-WU-Z1a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Uwa-VB-7S6"/>
                 <constraint firstItem="cIj-et-49e" firstAttribute="leading" secondItem="QZR-bM-1HC" secondAttribute="trailing" constant="16" id="UyE-gz-UbW"/>
-                <constraint firstItem="Mnb-QR-l96" firstAttribute="leading" secondItem="T6c-2j-Ed2" secondAttribute="trailing" constant="16" id="VTN-Of-P7X"/>
+                <constraint firstItem="Mnb-QR-l96" firstAttribute="leading" secondItem="T6c-2j-Ed2" secondAttribute="trailing" constant="8" id="VTN-Of-P7X"/>
                 <constraint firstItem="9aD-rz-BeX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="ZRD-Vc-GD2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Q6-Mw-TLL" secondAttribute="trailing" constant="40" id="a8v-1l-DHF"/>
                 <constraint firstItem="T6c-2j-Ed2" firstAttribute="top" secondItem="i4Z-Jk-xKt" secondAttribute="bottom" constant="60" id="avz-ON-y71"/>
@@ -190,6 +190,11 @@
                 <constraint firstItem="i4Z-Jk-xKt" firstAttribute="top" secondItem="dgO-bw-ixd" secondAttribute="bottom" constant="8" id="vtP-JK-iz3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9aD-rz-BeX" secondAttribute="trailing" constant="218" id="z7j-0t-H42"/>
             </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="o3b-xo-v2K"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="5.343511450381679" y="20.422535211267608"/>
         </view>
         <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bmT-20-ZKX">

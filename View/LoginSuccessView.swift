@@ -28,9 +28,9 @@ class LoginSuccessView: UIView {
     }
 }
 
-//MARK: - View
-
 extension LoginSuccessView {
+    
+    //MARK: - View
     
     private func setupView() {
         let view = loadFormNib()
@@ -57,10 +57,6 @@ extension LoginSuccessView {
         okButton.setTitle("OK", for: .normal)
         okButton.addTarget(self, action: #selector(okButtonOnTap), for: .touchUpInside)
     }
-}
-
-//MARK: - de
-extension LoginSuccessView {
     
     @objc func okButtonOnTap() {
         delegate?.loginSuccess()

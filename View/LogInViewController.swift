@@ -27,9 +27,9 @@ class LogInViewController: UIViewController {
     }
 }
 
-// MARK: - Binding
-
 extension LogInViewController {
+    
+    // MARK: - Binding
     
     private func bindViewModel() {
         viewModel.loginStatus = { [weak self] success in
@@ -42,11 +42,8 @@ extension LogInViewController {
             }
         }
     }
-}
-
+    
 // MARK: - UI
-
-extension LogInViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
@@ -62,12 +59,8 @@ extension LogInViewController {
         successView.backgroundColor = .white
         successView.addSubview(loginSuccessView)
     }
-    
-}
 
 // MARK: - TextField
-
-extension LogInViewController {
     
     enum TextFieldType {
         case account
@@ -85,6 +78,7 @@ extension LogInViewController {
         textField.textColor = .black
         textField.textAlignment = .left
         textField.font = .systemFont(ofSize: 16)
+        textField.addTarget(self, action: #selector(textFieldIsEditing), for: .editingChanged)
         
         switch type {
         case .account:
@@ -95,24 +89,18 @@ extension LogInViewController {
             textField.textContentType = .password
         }
     }
-}
 
 // MARK: - Lable
-
-extension LogInViewController {
     
     private func errorLabelConfigura() {
         error.isHidden = true
         error.textColor = .red
         error.font = .systemFont(ofSize: 24)
-        error.text = "error"
+        error.text = "帳號密碼錯誤"
         error.numberOfLines = 0
     }
-}
 
 // MARK: - Button
-
-extension LogInViewController {
     
     private func loginButtonConfigura() {
         login.setTitle("Login", for: .normal)
@@ -123,12 +111,8 @@ extension LogInViewController {
         register.setTitle("Register", for: .normal)
         register.addTarget(self, action: #selector(registerDidTap), for: .touchUpInside)
     }
-}
-
 
 // MARK: - Action
-
-extension LogInViewController {
     
     @objc func loginDidTap() {
         viewModel.account = accountTextField.text ?? ""
@@ -140,6 +124,10 @@ extension LogInViewController {
         let registerViewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
         print("push to register")
         navigationController?.pushViewController(registerViewController, animated: true)
+    }
+    
+    @objc func textFieldIsEditing() {
+        error.isHidden = true
     }
 }
 

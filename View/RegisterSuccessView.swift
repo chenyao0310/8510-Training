@@ -50,11 +50,9 @@ extension RegisterSuccessView {
         let nib = UINib(nibName: "RegisterSuccessViewXib", bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as! UIView
     }
-}
+
     
 // MARK: - Lable
-
-extension RegisterSuccessView {
     
     enum LabelType {
         case account
@@ -86,21 +84,17 @@ extension RegisterSuccessView {
             label.text = "Education: "
         }
     }
-}
 
 // MARK: - Button
-
-extension RegisterSuccessView {
     
     private func setupButton() {
         ok.setTitle("OK", for: .normal)
         ok.addTarget(self, action: #selector(okButtonDidTap), for: .touchUpInside)
     }
-}
+
 
 // MARK: - Delegate
-
-extension RegisterSuccessView {
+    
     @objc func okButtonDidTap() {
         delegate?.registerSuccess()
     }
