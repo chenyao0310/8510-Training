@@ -20,9 +20,6 @@ class BookingViewModel {
     var updateCount: ((String) -> Void)?
     
     func clear() {
-        adultCount = 0
-        childCount = 0
-        seniorCount = 0
         adultDidChange?(adultCount)
         childDidChange?(childCount)
         seniorDidChange?(seniorCount)

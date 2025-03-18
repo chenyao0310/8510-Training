@@ -38,6 +38,10 @@ extension SheetViewController {
 // MARK: - BingViewModel
     
     private func bindingViewModel() {
+        adultCount.text = viewModel?.adultCount.description
+        childCount.text = viewModel?.childCount.description
+        seniorCount.text = viewModel?.seniorCount.description
+        
         viewModel?.adultDidChange = { [weak self] adultCount in
             self?.adultCount.text = "\(adultCount)"
         }

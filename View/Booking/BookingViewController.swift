@@ -57,7 +57,6 @@ extension BookingViewController {
 // MARK: - Action
     
      @objc private func textfieldDidTab() {
-        group.text = ""
         showSheet()
     }
 }
