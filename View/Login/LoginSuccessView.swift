@@ -30,7 +30,7 @@ class LoginSuccessView: UIView {
 
 extension LoginSuccessView {
     
-    //MARK: - View
+//MARK: - View
     
     private func setupView() {
         let view = loadFormNib()

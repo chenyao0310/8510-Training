@@ -32,9 +32,11 @@ class RegisterSuccessView: UIView {
 }
 
 
-// MARK: - View
+
 
 extension RegisterSuccessView {
+    
+// MARK: - View
      
     private func setupView() {
         let view = loadFormNib()

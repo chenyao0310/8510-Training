@@ -29,7 +29,7 @@ class LogInViewController: UIViewController {
 
 extension LogInViewController {
     
-    // MARK: - Binding
+// MARK: - Binding
     
     private func bindViewModel() {
         viewModel.loginStatus = { [weak self] success in
@@ -140,7 +140,9 @@ protocol LoginSuccessDelegate: AnyObject {
 extension LogInViewController: LoginSuccessDelegate {
     
     func loginSuccess() {
+        let bookingViewController = BookingViewController(nibName: "BookingViewController", bundle: nil)
         successView.isHidden = true
+        navigationController?.pushViewController(bookingViewController, animated: true)
     }
 }
 
