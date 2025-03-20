@@ -105,13 +105,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6DFFA5EE2D811ECB006196B6 = {
+		6D9B0F122D896756006B6307 /* TrainingFeature */ = {
 			isa = PBXGroup;
 			children = (
+				6DFFA62B2D811EF7006196B6 /* View */,
 				6DB8FDC42D87A3570064A32D /* Manager */,
 				6DB8FDC32D87A3430064A32D /* ViewModel */,
 				6DFFA6332D812D5D006196B6 /* Model */,
-				6DFFA62B2D811EF7006196B6 /* View */,
+			);
+			path = TrainingFeature;
+			sourceTree = "<group>";
+		};
+		6DFFA5EE2D811ECB006196B6 = {
+			isa = PBXGroup;
+			children = (
+				6D9B0F122D896756006B6307 /* TrainingFeature */,
 				6DFFA5F92D811ECB006196B6 /* 8510_Training */,
 				6DFFA6102D811ECC006196B6 /* 8510_TrainingTests */,
 				6DFFA61A2D811ECC006196B6 /* 8510_TrainingUITests */,

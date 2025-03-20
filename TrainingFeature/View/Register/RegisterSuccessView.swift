@@ -31,9 +31,6 @@ class RegisterSuccessView: UIView {
     }
 }
 
-
-
-
 extension RegisterSuccessView {
     
 // MARK: - View
