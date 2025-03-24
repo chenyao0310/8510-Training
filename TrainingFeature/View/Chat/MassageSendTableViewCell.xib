@@ -35,7 +35,7 @@
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRC-4z-VRD">
-                        <rect key="frame" x="142" y="20" width="27" height="12"/>
+                        <rect key="frame" x="142" y="36" width="27" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Rbv-Dc-GDL" firstAttribute="leading" secondItem="lRC-4z-VRD" secondAttribute="trailing" constant="16" id="EwU-0n-V3Y"/>
-                    <constraint firstItem="lRC-4z-VRD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ZEf-RI-fJZ"/>
+                    <constraint firstItem="lRC-4z-VRD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="ZEf-RI-fJZ"/>
                     <constraint firstItem="Rbv-Dc-GDL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="pQ3-0e-hTy"/>
                     <constraint firstAttribute="trailing" secondItem="Rbv-Dc-GDL" secondAttribute="trailing" constant="8" id="v9R-2Q-xLq"/>
                 </constraints>
@@ -51,8 +51,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="massage" destination="lKp-24-CAt" id="1B7-yr-Kno"/>
-                <outlet property="massageImage" destination="DMv-IX-26c" id="b24-ts-u9j"/>
                 <outlet property="stackView" destination="Rbv-Dc-GDL" id="qQ0-sU-T4w"/>
+                <outlet property="sticker" destination="DMv-IX-26c" id="1y6-Rh-Uj1"/>
                 <outlet property="time" destination="lRC-4z-VRD" id="WjB-e3-rM1"/>
             </connections>
             <point key="canvasLocation" x="27.480916030534349" y="72.183098591549296"/>

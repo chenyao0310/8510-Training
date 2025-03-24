@@ -12,8 +12,8 @@ class ReplyMassageCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var userMassage: UILabel!
-    @IBOutlet weak var massageImage: UIImageView!
+    @IBOutlet weak var massage: UILabel!
+    @IBOutlet weak var sticker: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
 
     override func awakeFromNib() {
@@ -24,21 +24,21 @@ class ReplyMassageCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(user:String, userImage:String, time:String, isUseImage:Bool, massage:String, image:String) {
+    func configure(user:String, userImage:String, time:String, isUseSticker:Bool, massage:String, sticker:String) {
            userName.text = user
            self.userImage.image = UIImage(systemName: userImage)
            self.time.text = time
         
-        if isUseImage {
-            self.userMassage.isHidden = true
-            self.massageImage.isHidden = false
-            self.massageImage.image = UIImage(named: image)
-            self.userMassage.text = ""
+        if isUseSticker {
+            self.massage.isHidden = true
+            self.sticker.isHidden = false
+            self.sticker.image = UIImage(named: sticker)
+            self.massage.text = ""
         } else {
-            self.massageImage.isHidden = true
-            self.userMassage.isHidden = false
-            self.userMassage.text = massage
-            self.massageImage.image = nil
+            self.sticker.isHidden = true
+            self.massage.isHidden = false
+            self.massage.text = massage
+            self.sticker.image = nil
         }
     }
 }

@@ -10,11 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="_510_Training" customModuleProvider="target">
             <connections>
-                <outlet property="bottomConstraint" destination="lKB-8i-uom" id="dAM-7V-mye"/>
-                <outlet property="bottonStack" destination="xdA-GV-2pE" id="9nP-pm-svA"/>
-                <outlet property="image" destination="bsy-z9-SPo" id="OO2-A8-lTs"/>
+                <outlet property="clear" destination="6oM-iU-Jcn" id="d7q-rq-tpb"/>
                 <outlet property="massage" destination="mcf-q9-M71" id="C8T-kR-tYT"/>
                 <outlet property="send" destination="tcR-ww-CLT" id="rbG-K9-XL6"/>
+                <outlet property="sticker" destination="bsy-z9-SPo" id="Wos-VO-adj"/>
+                <outlet property="stickerCollectionView" destination="MVB-rJ-GJd" id="acl-dN-LnU"/>
+                <outlet property="stickerConstraint" destination="ddc-kD-KXg" id="cnq-Mo-YSV"/>
                 <outlet property="tableView" destination="byY-XA-0th" id="isO-8Q-aQf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -45,54 +46,76 @@
                             <buttonConfiguration key="configuration" style="plain" title="Clear"/>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="QEd-8i-Ual"/>
+                    </constraints>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="xdA-GV-2pE" userLabel="Button Stack View">
-                    <rect key="frame" x="20" y="743.66666666666663" width="353" height="34.333333333333371"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="byY-XA-0th">
+                    <rect key="frame" x="16" y="101" width="361" height="657"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="820" id="Lgu-nk-9xW"/>
+                    </constraints>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ks-97-xXd">
+                    <rect key="frame" x="20" y="766" width="353" height="32"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsy-z9-SPo">
-                            <rect key="frame" x="0.0" y="0.0" width="40" height="34.333333333333336"/>
+                            <rect key="frame" x="0.0" y="0.0" width="35" height="32"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="nYd-Ni-0Rj"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="35" id="nYd-Ni-0Rj"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="face.smiling" catalog="system"/>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Aa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mcf-q9-M71">
-                            <rect key="frame" x="49.666666666666686" y="0.0" width="240" height="34.333333333333336"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="240" id="Sod-2B-o52"/>
-                            </constraints>
+                            <rect key="frame" x="34.999999999999986" y="0.0" width="254.66666666666663" height="32"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcR-ww-CLT">
-                            <rect key="frame" x="289.66666666666669" y="0.0" width="63.333333333333314" height="34.333333333333336"/>
+                            <rect key="frame" x="289.66666666666669" y="0.0" width="63.333333333333314" height="32"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="63.329999999999998" id="WUt-YO-GPa"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="63.299999999999997" id="WUt-YO-GPa"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Send"/>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="iE9-8k-Z42"/>
+                    </constraints>
                 </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="byY-XA-0th">
-                    <rect key="frame" x="16" y="101" width="361" height="635"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MVB-rJ-GJd">
+                    <rect key="frame" x="16" y="766" width="361" height="0.0"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                    <constraints>
+                        <constraint firstAttribute="height" id="ddc-kD-KXg"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vyN-uG-lgo">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="7Ks-97-xXd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="0C7-ug-AE4"/>
                 <constraint firstItem="byY-XA-0th" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3AT-IL-C1v"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="byY-XA-0th" secondAttribute="trailing" constant="16" id="5Te-zQ-LzX"/>
-                <constraint firstItem="xdA-GV-2pE" firstAttribute="top" secondItem="byY-XA-0th" secondAttribute="bottom" constant="7.6699999999999999" id="8w1-m6-W6p"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MVB-rJ-GJd" secondAttribute="trailing" constant="16" id="8pb-qb-FnY"/>
                 <constraint firstItem="VLn-C8-jTU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="BY1-HO-TCm"/>
-                <constraint firstItem="xdA-GV-2pE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Kbn-Dc-TAU"/>
                 <constraint firstItem="VLn-C8-jTU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="S3n-O3-WKf"/>
+                <constraint firstItem="byY-XA-0th" firstAttribute="top" secondItem="VLn-C8-jTU" secondAttribute="bottom" constant="7.6699999999999999" id="cDe-Xa-nbC"/>
+                <constraint firstItem="MVB-rJ-GJd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cVQ-Tp-fWR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Ks-97-xXd" secondAttribute="trailing" constant="20" id="dxn-9j-9Va"/>
+                <constraint firstItem="7Ks-97-xXd" firstAttribute="top" secondItem="MVB-rJ-GJd" secondAttribute="bottom" id="eON-lY-rRa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7Ks-97-xXd" secondAttribute="bottom" constant="20" id="fll-8E-vpo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VLn-C8-jTU" secondAttribute="trailing" constant="20" id="fmx-vc-2tG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xdA-GV-2pE" secondAttribute="bottom" constant="40" id="lKB-8i-uom"/>
-                <constraint firstItem="byY-XA-0th" firstAttribute="top" secondItem="VLn-C8-jTU" secondAttribute="bottom" constant="7.6699999999999999" id="mh8-hT-05D"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xdA-GV-2pE" secondAttribute="trailing" constant="20" id="rkc-L4-45M"/>
+                <constraint firstItem="MVB-rJ-GJd" firstAttribute="top" secondItem="byY-XA-0th" secondAttribute="bottom" constant="8" symbolic="YES" id="i35-dD-WJX"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
         </view>

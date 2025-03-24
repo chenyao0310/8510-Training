@@ -9,19 +9,21 @@ import UIKit
 
 class ChatViewController: UIViewController {
     
-    @IBOutlet weak var image: UIButton!
+    @IBOutlet weak var sticker: UIButton!
     @IBOutlet weak var send: UIButton!
+    @IBOutlet weak var clear: UIButton!
     @IBOutlet weak var massage: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bottonStack: UIStackView!
+    @IBOutlet weak var stickerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stickerCollectionView: UICollectionView!
     
-    let viewModel = ChatViewModel()
+    private let viewModel = ChatViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         bindViewModel()
+        scrollToBottom(row: IndexPath(row: (viewModel.history.count) - 1, section: 0), animated: false)
     }
 }
 
@@ -31,15 +33,16 @@ extension ChatViewController{
     
     private func bindViewModel() {
         viewModel.onOwnerUsersChanged = { [weak self] in
+            let lastTwoIndexPath = IndexPath(row: (self?.viewModel.history.count ?? 0) - 2, section: 0)
                 let newIndex = IndexPath(row: (self?.viewModel.history.count ?? 0) - 1, section: 0)
-                self?.tableView.insertRows(at: [newIndex], with: .top)
-                self?.scrollToBottom(row: newIndex)
-            
+            self?.tableView.insertRows(at: [newIndex], with: .right)
+                self?.scrollToBottom(row: lastTwoIndexPath)
         }
         viewModel.onMassageChanged = { [weak self] in
+            let lastTwoIndexPath = IndexPath(row: (self?.viewModel.history.count ?? 0) - 2, section: 0)
                 let newIndex = IndexPath(row: (self?.viewModel.history.count ?? 0) - 1, section: 0)
-                self?.tableView.insertRows(at: [newIndex], with: .top)
-                self?.scrollToBottom(row: newIndex)
+            self?.tableView.insertRows(at: [newIndex], with: .left)
+                self?.scrollToBottom(row: lastTwoIndexPath)
         }
     }
     
@@ -47,28 +50,35 @@ extension ChatViewController{
     
     private func setupUI() {
         setupButton()
-        setupScrollView()
         setupTableView()
+        setupCollectionView()
+        setupTextFiled()
     }
 
 // MARK: - Button
     
     private func setupButton( ){
         sendButtonConfigura()
-        imageButtonConfigura()
+        stickerButtonConfigura()
+        clearButtonConfigura()
     }
     
     private func sendButtonConfigura() {
         send.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
     }
-    private func imageButtonConfigura() {
-        image.addTarget(self, action: #selector(imageButtonDidTap), for: .touchUpInside)
+    private func stickerButtonConfigura() {
+        sticker.addTarget(self, action: #selector(stickerToggle), for: .touchUpInside)
     }
     
-// MARK: - ScrollView
+    private func clearButtonConfigura() {
+        clear.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
+    }
     
-    private func setupScrollView() {
+// MARK: - TextFiled
     
+    private func setupTextFiled() {
+        massage.addTarget(self, action: #selector(stickerHide), for: .touchDown)
+        massage.addTarget(self, action: #selector(stickerHide), for: .editingChanged)
     }
     
 // MARK: - TableView
@@ -79,12 +89,63 @@ extension ChatViewController{
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 160
+        tableView.allowsSelection = false
     }
     
-    private func scrollToBottom(row:IndexPath) {
+    private func scrollToBottom(row:IndexPath, animated: Bool = true) {
         DispatchQueue.main.async {
             if row.row > 0{
-                self.tableView.scrollToRow(at: row, at: .top, animated: true)
+                self.tableView.scrollToRow(at: row, at: .top, animated: animated)
+            }
+        }
+    }
+    
+// MARK: - CollectionView
+    
+    private func setupCollectionView() {
+        let nib = UINib(nibName: "StickerCollectionViewCell", bundle: nil)
+        stickerCollectionView.register(nib, forCellWithReuseIdentifier: "stickerCell")
+        stickerCollectionView.delegate = self
+        stickerCollectionView.dataSource = self
+        stickerCollectionView.showsVerticalScrollIndicator = false
+        stickerCollectionView.backgroundColor = .white
+    }
+    
+// MARK: - Action
+    @objc private func stickerToggle() {
+        viewModel.isShowStickers.toggle() // false
+       if viewModel.isShowStickers {
+           stickerCollectionView.isHidden = false
+       }
+       self.stickerConstraint.constant = self.viewModel.isShowStickers ? 200 : 0
+        
+        UIView.animate(withDuration: 0.15, delay: .zero, options: .curveLinear) {
+           self.view.layoutIfNeeded()
+           } completion: { _ in
+               self.stickerCollectionView.isHidden = self.viewModel.isShowStickers ? false : true
+           }
+        UIView.animate(withDuration: 0.2) {
+            if self.viewModel.history.count > 0 {
+                self.tableView.scrollToRow(at: IndexPath(row: self.viewModel.history.count - 1 , section: 0), at: .top, animated: false)
+            }
+        }
+   }
+    
+    @objc func stickerHide() {
+        if viewModel.isShowStickers{
+            print("TextFild isEditing")
+            viewModel.isShowStickers = false
+            self.stickerConstraint.constant = self.viewModel.isShowStickers ? 200 : 0
+            
+            UIView.animate(withDuration: 0.15, delay: .zero, options: .curveLinear) {
+                self.view.layoutIfNeeded()
+            } completion: { _ in
+                self.stickerCollectionView.isHidden = self.viewModel.isShowStickers ? false : true
+            }
+            UIView.animate(withDuration: 0.2) {
+                if self.viewModel.history.count > 0 {
+                    self.tableView.scrollToRow(at: IndexPath(row: self.viewModel.history.count - 1 , section: 0), at: .top, animated: false)
+                }
             }
         }
     }
@@ -92,7 +153,7 @@ extension ChatViewController{
     @objc private func sendButtonDidTap() {
         guard let massageTextFieldText = massage.text, !massageTextFieldText.isEmpty else { return }
         // 送出訊息
-            self.viewModel.sendMassage(massage: massageTextFieldText, image: nil)
+            self.viewModel.sendMassage(massage: massageTextFieldText, sticker: nil)
         // 模擬回覆
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.viewModel.replyMassage()
@@ -100,8 +161,10 @@ extension ChatViewController{
         massage.text = ""
     }
     
-    @objc private func imageButtonDidTap() {
-        // 跳出 image 畫面
+    @objc func clearButtonDidTap() {
+        viewModel.deleteHistory()
+        tableView.reloadData()
+        viewModel.threeFirendRandomTalk()
     }
 }
 
@@ -113,7 +176,6 @@ extension ChatViewController: UITableViewDelegate { }
 extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("tableviewCellrow \(viewModel.history.count)")
         return viewModel.history.count
     }
     
@@ -121,12 +183,12 @@ extension ChatViewController: UITableViewDataSource {
         let cell = UITableViewCell()
         let massage = viewModel.getHistory(at: indexPath.row)
         
-        if indexPath.row % 2 == 0 {
+        if massage.user.name == "Me" {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MassageSendTableViewCell", for: indexPath) as? MassageSendTableViewCell {
-                cell.configure(time: massage.time,
-                               isUseImage: massage.isUseImage,
+                cell.configure(time: massage.time.dateFormatter(),
+                               isUseSticker: massage.isUseSticker,
                                massage: massage.massage ?? "",
-                               image: massage.image ?? "")
+                               sticker: massage.sticker ?? "")
                 return cell
             }
             return cell
@@ -134,10 +196,10 @@ extension ChatViewController: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyMassageCell", for: indexPath) as? ReplyMassageCell {
                 cell.configure(user: massage.user.name,
                                userImage: massage.user.image,
-                               time: massage.time,
-                               isUseImage: massage.isUseImage,
+                               time: massage.time.dateFormatter(),
+                               isUseSticker: massage.isUseSticker,
                                massage: massage.massage ?? "",
-                               image: massage.image ?? "")
+                               sticker: massage.sticker ?? "")
                 return cell
             }
             return cell
@@ -146,7 +208,39 @@ extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let massage = viewModel.getHistory(at: indexPath.row)
-        return massage.isUseImage ? 160 : 60
+        return massage.isUseSticker ? 160 : 60
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension ChatViewController: UICollectionViewDelegateFlowLayout { }
+
+extension ChatViewController: UICollectionViewDelegate { }
+
+extension ChatViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.stickerList.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "stickerCell", for: indexPath) as! StickerCollectionViewCell
+        cell.configure(sticker: viewModel.stickerList[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: stickerCollectionView.frame.width / 4, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     // 送出訊息
+        self.viewModel.sendMassage(massage: nil, sticker: viewModel.stickerList[indexPath.row])
+     // 模擬回覆
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        self.viewModel.replyMassage()
+        }
+    }
 }
+

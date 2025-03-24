@@ -17,8 +17,8 @@ struct ChatUser {
 struct HistoryData {
     
     var user: ChatUser
-    var time: String
-    var isUseImage: Bool
+    var time: Date
+    var isUseSticker: Bool
     var massage: String?
-    var image: String?
+    var sticker: String?
 }

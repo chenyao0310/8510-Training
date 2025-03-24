@@ -67,11 +67,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="massageImage" destination="lZD-l0-9AM" id="Nmk-tY-ixl"/>
+                <outlet property="massage" destination="5y7-KA-3Gg" id="OQt-AW-yMe"/>
                 <outlet property="stackView" destination="wf1-df-DLt" id="y3Y-b0-LAA"/>
+                <outlet property="sticker" destination="lZD-l0-9AM" id="vic-RN-dEP"/>
                 <outlet property="time" destination="fVn-O1-f3r" id="gZ4-VA-IW3"/>
                 <outlet property="userImage" destination="1rJ-J0-C9I" id="l52-7a-pAZ"/>
-                <outlet property="userMassage" destination="5y7-KA-3Gg" id="aQ0-DJ-zgQ"/>
                 <outlet property="userName" destination="BPF-sj-2sE" id="XP6-XJ-bW8"/>
             </connections>
             <point key="canvasLocation" x="4.5801526717557248" y="8.8028169014084519"/>
