@@ -7,11 +7,8 @@
 
 import Foundation
 
-<<<<<<< HEAD
+
 class APIManager {
-=======
-class APIManager{
->>>>>>> 5956fb4d81b12752badfc7646574facf184898c5
     
     private var moduleList: [Response] = []
     
