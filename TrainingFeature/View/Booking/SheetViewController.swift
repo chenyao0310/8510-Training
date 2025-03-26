@@ -103,11 +103,8 @@ extension SheetViewController {
     }
     
     @objc private func confirmDidTap() {
-        guard let adultCount = adultCount.text else { return }
-        guard let childCount = childCount.text else { return }
-        guard let seniorCount = seniorCount.text else { return }
-        delegate?.updatePersons("\(adultCount)位大人 \(childCount)位小孩 \(seniorCount)位長者")
         viewModel.saveData()
+        delegate?.updatePersons()
         self.dismiss(animated: true)
     }
 }

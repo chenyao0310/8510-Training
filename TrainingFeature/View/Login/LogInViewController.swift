@@ -140,10 +140,12 @@ protocol LoginSuccessDelegate: AnyObject {
 extension LogInViewController: LoginSuccessDelegate {
     
     func loginSuccess() {
-        let chatViewController = ChatViewController(nibName: "ChatViewController", bundle: nil)
-//        let bookingViewController = BookingViewController(nibName: "BookingViewController", bundle: nil)
+//        let chatViewController = ChatViewController(nibName: "ChatViewController", bundle: nil)
+        let bookingViewController = BookingViewController(nibName: "BookingViewController", bundle: nil)
         successView.isHidden = true
-        navigationController?.pushViewController(chatViewController, animated: true)
+        navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.tintColor = .purple
+        navigationController?.pushViewController(bookingViewController, animated: true)
     }
 }
 
