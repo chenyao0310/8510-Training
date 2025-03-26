@@ -1,0 +1,88 @@
+{
+  "Module_List": [
+    {
+      "ModuleItem_List": [
+        {
+          "Item_Price": 33333,
+          "Item_Text": "韓國滑雪、兩晚五星飯店5日",
+          "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/110/261.jpg?20240905145335"
+        },
+        {
+          "Item_Price": 99999,
+          "Item_Text": "花見北陸、雪壁傳奇5日4/16~4/26",
+          "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/110/262.jpg?20221227172252"
+        },
+        {
+          "Item_Price": 47000,
+          "Item_Text": "北海道冰瀑祭、網走流冰船5日",
+          "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/110/1262.jpg?20221228143108"
+        }
+      ],
+      "Module_Remark": "",
+      "Module_Text": "熱銷推薦",
+      "Index_Max": -1,
+      "Other_Max": -1
+    },
+    {
+      "ModuleItem_List": [
+        {
+          "Item_Price": 23800,
+          "Item_Text": "關西京阪神奈、米其林景點5日",
+          "Pic_Url": ""
+        },
+        {
+          "Item_Price": 29888,
+          "Item_Text": "玩豪斯登堡、兩晚溫泉飯店5日",
+          "Pic_Url": ""
+        },
+        {
+          "Item_Price": 33888,
+          "Item_Text": "函館北海道、小樽運河旅情5日",
+          "Pic_Url": ""
+        },
+        {
+          "Item_Price": 15900,
+          "Item_Text": "釜邱揪好康、汗蒸幕積木村5日",
+          "Pic_Url": ""
+        },
+        {
+          "Item_Price": 27888,
+          "Item_Text": "濟州神話世界、五星度假村5日",
+          "Pic_Url": ""
+        }
+      ],
+      "Module_Remark": "",
+      "Module_Text": "亞洲精選",
+      "Index_Max": -1,
+      "Other_Max": -1
+    },
+    {
+      "ModuleItem_List": [
+        {
+          "Item_Price": 61800,
+          "Item_Text": "澳洲住農莊、莫瑞頓海豚島9日",
+          "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/113/260.jpg?20221209160348"
+        },
+        {
+          "Item_Price": 50000,
+          "Item_Text": "北海道冰瀑祭、網走流冰船5日",
+          "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/113/1263.jpg?20221228144148"
+        },
+        {
+          "Item_Price": 11111,
+          "Item_Text": "韓國滑雪、兩晚五星飯店5日",
+          "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/113/1264.jpg?20221228144231"
+        },
+        {
+          "Item_Price": 222111,
+          "Item_Text": "義大利遇到愛、羅馬假期11日",
+          "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/113/1265.jpg?20221228144319"
+        }
+      ],
+      "Module_Remark": "",
+      "Module_Text": "長線焦點",
+      "Index_Max": -1,
+      "Other_Max": -1
+    }
+  ]
+}
