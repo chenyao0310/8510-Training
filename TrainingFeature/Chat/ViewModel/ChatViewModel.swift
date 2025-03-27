@@ -81,6 +81,11 @@ class ChatViewModel {
             }
         }
     }
+    
+    func deleteHistory() {
+        chatHistory.removeAll()
+        coreData.deleteAllChatHistory()
+    }
 }
 
 extension ChatViewModel {
@@ -113,11 +118,6 @@ extension ChatViewModel {
     private func historySave(_ data: HistoryData) {
         chatHistory.append(data)
         saveToCoreData(chatHistory.last!)
-    }
-    
-    private func deleteHistory() {
-        chatHistory.removeAll()
-        coreData.deleteAllChatHistory()
     }
     
     private func chatrandomUser() -> ChatUser? {
