@@ -69,14 +69,8 @@ extension BookingViewController {
     
 // MARK: - Action
     
-    @objc private func personDidTab() {
+    @objc private func personDidTap() {
         showSheet()
-    }
-    
-    @objc private func cityDidTap() {
-        navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.tintColor = .purple
-        navigationController?.pushViewController(CityViewController(), animated: true)
     }
 }
 
@@ -113,11 +107,7 @@ extension BookingViewController: UITableViewDataSource {
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell", for: indexPath) as? CityTableViewCell {
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cityDidTap))
-                
                 cell.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-                cell.city.isUserInteractionEnabled = true
-                cell.city.addGestureRecognizer(tapGesture)
                 return cell
             }
         case 2:
@@ -127,14 +117,14 @@ extension BookingViewController: UITableViewDataSource {
             }
         case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as? PersonTableViewCell{
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(personDidTab))
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(personDidTap))
                 
                 cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.width + 100, bottom: 0, right: 0)
-                cell.persons.isUserInteractionEnabled = true
-                cell.persons.addGestureRecognizer(tapGesture)
+                cell.isUserInteractionEnabled = true
+                cell.addGestureRecognizer(tapGesture)
                 
                 viewModel.personDidChange = { persons in
-                    cell.persons.text! = persons
+                    cell.configure(with: persons)
                 }
                 return cell
             }
@@ -148,8 +138,7 @@ extension BookingViewController: UITableViewDataSource {
                 cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.width + 100, bottom: 0, right: 0)
                 let index = indexPath.row - ModuleIndexPath
                 guard let data = viewModel.data?.Module[index] else { return cell }
-                cell.title.text = data.Module_Text
-                cell.configure(data.ModuleItem_List)
+                cell.configure(data)
                 return cell
             }
         }
