@@ -16,7 +16,7 @@ class BookingViewModel {
     var seniorCount: Int = 0
     
     var personDidChange: ((String) -> Void)?
-    var data: [Response] = []
+    var data: Response?
     
     private let apiService = APIManager()
     private var totalPerson: String {

@@ -13,7 +13,7 @@ class BookingViewController: UIViewController {
     @IBOutlet weak var group: NoCareTextField!
     @IBOutlet weak var mainTableView: UITableView!
     
-    let viewModel: BookingViewModel = .shared
+    private let viewModel: BookingViewModel = .shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,7 +146,10 @@ extension BookingViewController: UITableViewDataSource {
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "ModuleListTableViewCell", for: indexPath) as? ModuleListTableViewCell {
                 cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.width + 100, bottom: 0, right: 0)
-                cell.configure(viewModel.data.first!, index: indexPath.row - ModuleIndexPath)
+                let index = indexPath.row - ModuleIndexPath
+                guard let data = viewModel.data?.Module[index] else { return cell }
+                cell.title.text = data.Module_Text
+                cell.configure(data.ModuleItem_List)
                 return cell
             }
         }

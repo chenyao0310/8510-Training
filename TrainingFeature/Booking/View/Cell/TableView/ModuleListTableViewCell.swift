@@ -12,16 +12,15 @@ class ModuleListTableViewCell: UITableViewCell {
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var title: UILabel!
 
-   private var data: Module_List?
+    private var data: [ModuleItem]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
     }
 
-    func configure(_ data: Response, index: Int){
-        self.title.text = data.Module_List[index].Module_Text
-        self.data = data.Module_List[index]
+    func configure(_ data: [ModuleItem]) {
+        self.data = data
     }
 }
 
@@ -52,14 +51,14 @@ extension ModuleListTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let data = data else { return 0 }
-        return data.ModuleItem_List.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = UICollectionViewCell()
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ModuleItemCollectionViewCell", for: indexPath) as? ModuleItemCollectionViewCell {
             guard let data = data else { return cell }
-            cell.configure(data.ModuleItem_List[indexPath.row])
+            cell.configure(data[indexPath.row])
             return cell
         }
         return cell

@@ -11,7 +11,6 @@ class CityTableViewCell: UITableViewCell {
     
     @IBOutlet weak var city: UILabel!
     
-    
     func configure(with city: String) {
         self.city.text = city
     }

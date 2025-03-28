@@ -7,32 +7,32 @@
 
 import Foundation
 
-
 class APIManager {
     
-    private var moduleList: [Response] = []
+    private var moduleList: Response?
     
     init(){
-        fetchResultJson()
+        self.moduleList = fetchResultJson()
     }
     
-    func getModuleList() -> [Response] {
+    func getModuleList() -> Response? {
         return moduleList
     }
 }
 
 extension APIManager {
     
-    private func fetchResultJson() {
+    private func fetchResultJson() -> Response? {
             guard let url = Bundle.main.url(forResource: "ADTrain1", withExtension: "json") else {
                 fatalError("Couldnt find result in main bundle.")
             }
             do {
                 let data = try Data(contentsOf: url)
                 let response = try JSONDecoder().decode(Response.self, from: data)
-                moduleList.append(response)
+                return response
             } catch {
                 print("decode result json failed -> \(error)")
             }
+        return nil
         }
 }

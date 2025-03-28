@@ -14,7 +14,7 @@ class ModuleItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var price: UILabel!
     
-    func configure(_ data: ModuleItem_List) {
+    func configure(_ data: ModuleItem) {
         setupShadow()
         view.backgroundColor = .white
         view.layer.cornerRadius = 4

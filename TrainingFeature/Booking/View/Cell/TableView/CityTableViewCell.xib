@@ -42,7 +42,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="city" destination="O80-oj-PRk" id="Lad-j7-JZb"/>
+                <outlet property="city" destination="O80-oj-PRk" id="Ko0-Bi-DZV"/>
             </connections>
             <point key="canvasLocation" x="-35.114503816793892" y="29.225352112676056"/>
         </tableViewCell>
