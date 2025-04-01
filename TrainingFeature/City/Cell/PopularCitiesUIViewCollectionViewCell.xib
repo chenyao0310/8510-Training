@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PopularCitiesUIViewCollectionViewCell" customModule="_510_Training" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="273" height="232"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="273" height="232"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="可樂旅遊計畫" translatesAutoresizingMaskIntoConstraints="NO" id="VoP-j8-olU">
+                        <rect key="frame" x="0.0" y="0.0" width="273" height="232"/>
+                        <color key="backgroundColor" red="0.44132733585858586" green="0.44132733585858586" blue="0.44132733585858586" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSg-sS-Riy">
+                        <rect key="frame" x="121.66666666666669" y="202" width="30" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VoP-j8-olU" secondAttribute="trailing" id="A4u-vL-Y6u"/>
+                <constraint firstAttribute="bottom" secondItem="jSg-sS-Riy" secondAttribute="bottom" constant="12" id="QOr-iX-4FW"/>
+                <constraint firstItem="jSg-sS-Riy" firstAttribute="centerX" secondItem="VoP-j8-olU" secondAttribute="centerX" id="XlI-px-ngU"/>
+                <constraint firstAttribute="bottom" secondItem="VoP-j8-olU" secondAttribute="bottom" id="bmW-32-o3C"/>
+                <constraint firstItem="VoP-j8-olU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tW1-oE-ltu"/>
+                <constraint firstItem="VoP-j8-olU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zpv-rf-RU7"/>
+            </constraints>
+            <size key="customSize" width="273" height="232"/>
+            <connections>
+                <outlet property="cityImage" destination="VoP-j8-olU" id="4my-hh-d0U"/>
+                <outlet property="cityName" destination="jSg-sS-Riy" id="dOe-BJ-LGO"/>
+            </connections>
+            <point key="canvasLocation" x="57.251908396946561" y="-43.661971830985919"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="可樂旅遊計畫" width="2544" height="1100"/>
+    </resources>
+</document>

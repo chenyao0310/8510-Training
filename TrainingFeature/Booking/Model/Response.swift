@@ -24,7 +24,8 @@ struct Module: Decodable {
 }
 
 struct ModuleItem: Decodable {
-    var Item_Price: Int
+    var Item_Price: Int?
     var Item_Text: String
     var Pic_Url: String
 }
+

@@ -141,11 +141,12 @@ extension LogInViewController: LoginSuccessDelegate {
     
     func loginSuccess() {
 //        let chatViewController = ChatViewController(nibName: "ChatViewController", bundle: nil)
-        let bookingViewController = BookingViewController(nibName: "BookingViewController", bundle: nil)
+//        let bookingViewController = BookingViewController(nibName: "BookingViewController", bundle: nil)
+        let cityViewController = CityViewController(nibName: "CityViewController", bundle: nil)
         successView.isHidden = true
         navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.tintColor = .purple
-        navigationController?.pushViewController(bookingViewController, animated: true)
+        navigationController?.pushViewController(cityViewController, animated: true)
     }
 }
 
