@@ -6,7 +6,7 @@
 //
 
 import Testing
-@testable import _810_Training
+@testable import _8510_Training
 
 struct _810_TrainingTests {
 

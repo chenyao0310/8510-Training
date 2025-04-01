@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		6DA5D3942D8D5A9500447835 /* ChatCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DA5D3922D8D5A9500447835 /* ChatCoreData.xcdatamodeld */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		6DFFA60E2D811ECC006196B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -28,7 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6DA5D3932D8D5A9500447835 /* ChatCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatCoreData.xcdatamodel; sourceTree = "<group>"; };
 		6DFFA5F72D811ECB006196B6 /* 8510_Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8510_Training.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DFFA60D2D811ECC006196B6 /* 8510_TrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 8510_TrainingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DFFA6172D811ECC006196B6 /* 8510_TrainingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 8510_TrainingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,19 +40,29 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6DB8FDC32D87A3430064A32D /* ViewModel */ = {
+		6D2CEE1A2D94000600884A2E /* Booking */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ViewModel;
+			path = Booking;
 			sourceTree = "<group>";
 		};
-		6DB8FDC42D87A3570064A32D /* Manager */ = {
+		6D2CEE3A2D94006100884A2E /* Chat */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Manager;
+			path = Chat;
 			sourceTree = "<group>";
 		};
-		6DCE60782D90F2B500CCAFB2 /* Extension */ = {
+		6D2CEE4B2D94013600884A2E /* Login */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Extension;
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6D2CEE582D9401AC00884A2E /* Register */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Register;
+			sourceTree = "<group>";
+		};
+		6D2CEE6C2D9401EF00884A2E /* City */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = City;
 			sourceTree = "<group>";
 		};
 		6DFFA5F92D811ECB006196B6 /* 8510_Training */ = {
@@ -76,16 +81,6 @@
 		6DFFA61A2D811ECC006196B6 /* 8510_TrainingUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = 8510_TrainingUITests;
-			sourceTree = "<group>";
-		};
-		6DFFA62B2D811EF7006196B6 /* View */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = View;
-			sourceTree = "<group>";
-		};
-		6DFFA6332D812D5D006196B6 /* Model */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -118,12 +113,11 @@
 		6D9B0F122D896756006B6307 /* TrainingFeature */ = {
 			isa = PBXGroup;
 			children = (
-				6DCE60782D90F2B500CCAFB2 /* Extension */,
-				6DFFA62B2D811EF7006196B6 /* View */,
-				6DB8FDC42D87A3570064A32D /* Manager */,
-				6DB8FDC32D87A3430064A32D /* ViewModel */,
-				6DFFA6332D812D5D006196B6 /* Model */,
-				6DA5D3922D8D5A9500447835 /* ChatCoreData.xcdatamodeld */,
+				6D2CEE1A2D94000600884A2E /* Booking */,
+				6D2CEE3A2D94006100884A2E /* Chat */,
+				6D2CEE4B2D94013600884A2E /* Login */,
+				6D2CEE582D9401AC00884A2E /* Register */,
+				6D2CEE6C2D9401EF00884A2E /* City */,
 			);
 			path = TrainingFeature;
 			sourceTree = "<group>";
@@ -165,12 +159,12 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				6DB8FDC32D87A3430064A32D /* ViewModel */,
-				6DB8FDC42D87A3570064A32D /* Manager */,
-				6DCE60782D90F2B500CCAFB2 /* Extension */,
+				6D2CEE1A2D94000600884A2E /* Booking */,
+				6D2CEE3A2D94006100884A2E /* Chat */,
+				6D2CEE4B2D94013600884A2E /* Login */,
+				6D2CEE582D9401AC00884A2E /* Register */,
+				6D2CEE6C2D9401EF00884A2E /* City */,
 				6DFFA5F92D811ECB006196B6 /* 8510_Training */,
-				6DFFA62B2D811EF7006196B6 /* View */,
-				6DFFA6332D812D5D006196B6 /* Model */,
 			);
 			name = 8510_Training;
 			packageProductDependencies = (
@@ -298,7 +292,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DA5D3942D8D5A9500447835 /* ChatCoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,19 +604,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		6DA5D3922D8D5A9500447835 /* ChatCoreData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6DA5D3932D8D5A9500447835 /* ChatCoreData.xcdatamodel */,
-			);
-			currentVersion = 6DA5D3932D8D5A9500447835 /* ChatCoreData.xcdatamodel */;
-			path = ChatCoreData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6DFFA5EF2D811ECB006196B6 /* Project object */;
 }
