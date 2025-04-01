@@ -17,16 +17,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rbv-Dc-GDL">
-                        <rect key="frame" x="185" y="12" width="127" height="152"/>
+                        <rect key="frame" x="185" y="12" width="127" height="102"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKp-24-CAt" userLabel="Massage">
-                                <rect key="frame" x="77" y="0.0" width="50" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKp-24-CAt" userLabel="Massage">
+                                <rect key="frame" x="127" y="0.0" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="Hello" translatesAutoresizingMaskIntoConstraints="NO" id="DMv-IX-26c" userLabel="Massage Image">
-                                <rect key="frame" x="0.0" y="58" width="127" height="94"/>
+                                <rect key="frame" x="0.0" y="8" width="127" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="94" id="L9x-4J-HGY"/>
                                     <constraint firstAttribute="width" constant="127" id="vWk-PK-Lyb"/>
@@ -42,6 +42,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="lRC-4z-VRD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="142" id="AIl-KJ-1Hd"/>
                     <constraint firstItem="Rbv-Dc-GDL" firstAttribute="leading" secondItem="lRC-4z-VRD" secondAttribute="trailing" constant="16" id="EwU-0n-V3Y"/>
                     <constraint firstItem="lRC-4z-VRD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="ZEf-RI-fJZ"/>
                     <constraint firstItem="Rbv-Dc-GDL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="pQ3-0e-hTy"/>

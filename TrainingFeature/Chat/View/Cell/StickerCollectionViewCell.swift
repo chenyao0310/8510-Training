@@ -10,11 +10,6 @@ import UIKit
 class StickerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var sticker: UIImageView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
     
     func configure(sticker: String) {
         self.sticker.image = UIImage(named: sticker)

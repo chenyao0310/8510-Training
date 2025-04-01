@@ -15,14 +15,6 @@ class ReplyMassageCell: UITableViewCell {
     @IBOutlet weak var massage: UILabel!
     @IBOutlet weak var sticker: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     func configure(user:String, userImage:String, time:String, isUseSticker:Bool, massage:String, sticker:String) {
            userName.text = user
