@@ -10,4 +10,8 @@ import UIKit
 class PersonTableViewCell: UITableViewCell {
 
     @IBOutlet weak var persons: UILabel!
+    
+    func configure(with person: String) {
+        self.persons.text = person
+    }
 }
