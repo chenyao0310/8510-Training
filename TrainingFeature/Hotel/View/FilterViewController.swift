@@ -64,6 +64,7 @@ extension FilterViewController {
 // MARK: - TableView
     
     private func setupTableView() {
+        tableView.register(UINib(nibName: "SearchNameTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchNameTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -73,10 +74,17 @@ extension FilterViewController {
 extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            
+        default:
+            break
+        }
+        
         return UITableViewCell()
     }
 }
