@@ -85,12 +85,25 @@ extension PopularCitiesView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 110, height: 100)
+        let numberOfItemsPerRow: CGFloat = 3
+        let cellWidthSpacing: CGFloat = 8
+        let totalWidthSpacing = (numberOfItemsPerRow - 1) * cellWidthSpacing + (2 * cellWidthSpacing)
+        
+        return CGSize(width: (collectionView.bounds.width - totalWidthSpacing) / 3, height: (collectionView.bounds.width - totalWidthSpacing) / 3)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let data = viewModel.popCitys?[indexPath.row] else { return }
         print(data.Item_Text)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
 }
 

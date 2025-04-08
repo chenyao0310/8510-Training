@@ -9,7 +9,6 @@ import UIKit
 
 class CityViewController: UIViewController {
 
-    
     @IBOutlet weak var popularCities: UIButton!
     @IBOutlet weak var allCities: UIButton!
     @IBOutlet weak var speratorLine: UIView!
@@ -26,11 +25,6 @@ class CityViewController: UIViewController {
         setupNavigation()
         setupUI()
         bindViewModel()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
     }
 }
 
@@ -56,7 +50,8 @@ extension CityViewController {
     }
     
     private func updateSperatorLineWidth() {
-        let width: CGFloat = view.bounds.width / CGFloat(cityButtonArray.count)
+        let screenSize = UIScreen.main.bounds
+        let width: CGFloat = screenSize.width / CGFloat(cityButtonArray.count)
         speratorLineWidth.constant = width
     }
     
