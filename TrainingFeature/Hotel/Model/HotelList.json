@@ -23,9 +23,6 @@
       "Img_Url": "https://www.colatour.com.tw/COLA_AppFiles/A03H_Hotel/Images/254088-01.GIF"
     },
     {
-      "Add_On": [
-        "https://www.colatour.com.tw/COLA_AppFiles/M03C_Hotel/thsr_train_gray@3x.png"
-      ],
       "Short_Promotion": "",
       "TWD_RetailPrice_Value": 13523,
       "Hotel_Longitude": 121.35483000000001,
@@ -218,9 +215,6 @@
       "Img_Url": "https://www.colatour.com.tw/COLA_AppFiles/A03H_Hotel/Images/174740-01.GIF"
     },
     {
-      "Add_On": [
-        "https://www.colatour.com.tw/COLA_AppFiles/M03C_Hotel/thsr_train_gray@3x.png"
-      ],
       "Short_Promotion": "",
       "TWD_RetailPrice_Value": 7101,
       "Hotel_Longitude": 121.64072,

@@ -149,10 +149,7 @@ extension HotelSearchTableViewCell {
     }
     
     private func setupStarView() {
-//        star.subviews.forEach { $0.removeFromSuperview() }
-//        if let constraint = dynamicStarWidthConstraint {
-//            star.removeConstraint(constraint)
-//        }
+        
         guard let data else { return }
         let viewModel = data.Hotel_Grade // viewModel Data
         var starCount = viewModel // 處理 0.5 問題
@@ -161,13 +158,11 @@ extension HotelSearchTableViewCell {
             half = true
             starCount -= 0.5
         }
-//        let view = StarView(frame: star.bounds)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        star.addSubview(view)
+
         // 起始位置 * 總星星數量(包含一半) + 間距 * 星星數量(包含一半)
         starViewWidth.constant = 12 * (starCount + (half ? 1 : 0)) + 2 * (starCount - (half ? 0 : 1))
         star.rating = viewModel
-//        setupConstraints(with: view, equalTo: star)
+
     }
     
     private func setupConstraints(with sub: UIView, equalTo main: UIView) {

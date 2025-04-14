@@ -31,12 +31,28 @@
 		6DA8F0D12D9BC44D00C92B89 /* HotelSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA8F0CE2D9BC44D00C92B89 /* HotelSearchTableViewCell.swift */; };
 		6DA8F0D32D9BC71D00C92B89 /* HotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA8F0D22D9BC71D00C92B89 /* HotView.swift */; };
 		6DA8F0D52D9BC72A00C92B89 /* HotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DA8F0D42D9BC72A00C92B89 /* HotView.xib */; };
+		6DA9B85D2DAC8D0600D19E84 /* SortMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA9B85C2DAC8D0600D19E84 /* SortMenuView.swift */; };
+		6DA9B85F2DAC8D1400D19E84 /* SortMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DA9B85E2DAC8D1400D19E84 /* SortMenuView.xib */; };
+		6DA9B8612DAC9AFC00D19E84 /* SortMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA9B8602DAC9AFC00D19E84 /* SortMenuViewModel.swift */; };
+		6DBD045F2DA662D700191CCA /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD045E2DA662D700191CCA /* FilterViewModel.swift */; };
+		6DBD04622DA676D600191CCA /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD04612DA676D600191CCA /* UIButton+.swift */; };
+		6DC05E1F2DA745BC00335C63 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC05E1E2DA745BC00335C63 /* TrainView.swift */; };
+		6DC05E212DA745C900335C63 /* TrainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC05E202DA745C900335C63 /* TrainView.xib */; };
+		6DC05E242DA766C200335C63 /* SearchResultViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC05E232DA766C200335C63 /* SearchResultViewCell.xib */; };
+		6DC05E252DA766C200335C63 /* SearchResultViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC05E222DA766C200335C63 /* SearchResultViewCell.swift */; };
+		6DC05E272DA7776600335C63 /* TrainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC05E262DA7776600335C63 /* TrainViewModel.swift */; };
+		6DCE19182DA8991F00468C64 /* SelectSortedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE19172DA8991F00468C64 /* SelectSortedView.swift */; };
+		6DCE191A2DA8992B00468C64 /* SelectSortedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DCE19192DA8992B00468C64 /* SelectSortedView.xib */; };
+		6DCE191C2DA8A17000468C64 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE191B2DA8A17000468C64 /* Notification+.swift */; };
+		6DCE191E2DA8AC5B00468C64 /* Decimal+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE191D2DA8AC5B00468C64 /* Decimal+.swift */; };
 		6DD7AC902D9CC27700D28A54 /* OverAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7AC8F2D9CC27700D28A54 /* OverAllView.swift */; };
 		6DD7AC922D9CC35E00D28A54 /* OverAllView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7AC912D9CC35E00D28A54 /* OverAllView.xib */; };
 		6DD7AC942D9CCCBB00D28A54 /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7AC932D9CCCBB00D28A54 /* MemberView.swift */; };
 		6DD7AC962D9CCCD200D28A54 /* MemberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7AC952D9CCCD200D28A54 /* MemberView.xib */; };
 		6DD7AC9E2D9CECE500D28A54 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7AC9D2D9CECE500D28A54 /* StarView.swift */; };
 		6DD7ACA02D9CEF1C00D28A54 /* StarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7AC9F2D9CEF1C00D28A54 /* StarView.xib */; };
+		6DEE05FD2DA4C524007BC426 /* DoubleSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEE05FC2DA4C524007BC426 /* DoubleSliderView.swift */; };
+		6DEE05FF2DA4C533007BC426 /* DoubleSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DEE05FE2DA4C533007BC426 /* DoubleSliderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,12 +97,28 @@
 		6DA8F0CF2D9BC44D00C92B89 /* HotelSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelSearchTableViewCell.xib; sourceTree = "<group>"; };
 		6DA8F0D22D9BC71D00C92B89 /* HotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotView.swift; sourceTree = "<group>"; };
 		6DA8F0D42D9BC72A00C92B89 /* HotView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotView.xib; sourceTree = "<group>"; };
+		6DA9B85C2DAC8D0600D19E84 /* SortMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMenuView.swift; sourceTree = "<group>"; };
+		6DA9B85E2DAC8D1400D19E84 /* SortMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortMenuView.xib; sourceTree = "<group>"; };
+		6DA9B8602DAC9AFC00D19E84 /* SortMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMenuViewModel.swift; sourceTree = "<group>"; };
+		6DBD045E2DA662D700191CCA /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		6DBD04612DA676D600191CCA /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		6DC05E1E2DA745BC00335C63 /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
+		6DC05E202DA745C900335C63 /* TrainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainView.xib; sourceTree = "<group>"; };
+		6DC05E222DA766C200335C63 /* SearchResultViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewCell.swift; sourceTree = "<group>"; };
+		6DC05E232DA766C200335C63 /* SearchResultViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewCell.xib; sourceTree = "<group>"; };
+		6DC05E262DA7776600335C63 /* TrainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewModel.swift; sourceTree = "<group>"; };
+		6DCE19172DA8991F00468C64 /* SelectSortedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSortedView.swift; sourceTree = "<group>"; };
+		6DCE19192DA8992B00468C64 /* SelectSortedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectSortedView.xib; sourceTree = "<group>"; };
+		6DCE191B2DA8A17000468C64 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
+		6DCE191D2DA8AC5B00468C64 /* Decimal+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+.swift"; sourceTree = "<group>"; };
 		6DD7AC8F2D9CC27700D28A54 /* OverAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverAllView.swift; sourceTree = "<group>"; };
 		6DD7AC912D9CC35E00D28A54 /* OverAllView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverAllView.xib; sourceTree = "<group>"; };
 		6DD7AC932D9CCCBB00D28A54 /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 		6DD7AC952D9CCCD200D28A54 /* MemberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberView.xib; sourceTree = "<group>"; };
 		6DD7AC9D2D9CECE500D28A54 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		6DD7AC9F2D9CEF1C00D28A54 /* StarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarView.xib; sourceTree = "<group>"; };
+		6DEE05FC2DA4C524007BC426 /* DoubleSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSliderView.swift; sourceTree = "<group>"; };
+		6DEE05FE2DA4C533007BC426 /* DoubleSliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleSliderView.xib; sourceTree = "<group>"; };
 		6DFFA5F72D811ECB006196B6 /* 8510_Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8510_Training.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DFFA60D2D811ECC006196B6 /* 8510_TrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 8510_TrainingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DFFA6172D811ECC006196B6 /* 8510_TrainingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 8510_TrainingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +229,14 @@
 				6DD7AC952D9CCCD200D28A54 /* MemberView.xib */,
 				6DD7AC9D2D9CECE500D28A54 /* StarView.swift */,
 				6DD7AC9F2D9CEF1C00D28A54 /* StarView.xib */,
+				6DEE05FC2DA4C524007BC426 /* DoubleSliderView.swift */,
+				6DEE05FE2DA4C533007BC426 /* DoubleSliderView.xib */,
+				6DC05E1E2DA745BC00335C63 /* TrainView.swift */,
+				6DC05E202DA745C900335C63 /* TrainView.xib */,
+				6DCE19172DA8991F00468C64 /* SelectSortedView.swift */,
+				6DCE19192DA8992B00468C64 /* SelectSortedView.xib */,
+				6DA9B85C2DAC8D0600D19E84 /* SortMenuView.swift */,
+				6DA9B85E2DAC8D1400D19E84 /* SortMenuView.xib */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -218,6 +258,8 @@
 				6DA4B4122DA3C549006E36AA /* PriceTableViewCell.xib */,
 				6DA4B4152DA3C571006E36AA /* SearchNameTableViewCell.swift */,
 				6DA4B4162DA3C571006E36AA /* SearchNameTableViewCell.xib */,
+				6DC05E222DA766C200335C63 /* SearchResultViewCell.swift */,
+				6DC05E232DA766C200335C63 /* SearchResultViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -225,6 +267,7 @@
 		6DA8F0BD2D9BA24700C92B89 /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
+				6DBD04602DA676C000191CCA /* Extension */,
 				6DA8F0C12D9BA27500C92B89 /* Manager */,
 				6DA8F0C02D9BA26500C92B89 /* ViewModel */,
 				6DA8F0BF2D9BA25C00C92B89 /* Model */,
@@ -259,6 +302,9 @@
 			isa = PBXGroup;
 			children = (
 				6DA8F0CC2D9BBBBD00C92B89 /* HotelSearchViewModel.swift */,
+				6DBD045E2DA662D700191CCA /* FilterViewModel.swift */,
+				6DC05E262DA7776600335C63 /* TrainViewModel.swift */,
+				6DA9B8602DAC9AFC00D19E84 /* SortMenuViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -269,6 +315,16 @@
 				6DA8F0C22D9BA2C500C92B89 /* HotelAPIManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		6DBD04602DA676C000191CCA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6DBD04612DA676D600191CCA /* UIButton+.swift */,
+				6DCE191B2DA8A17000468C64 /* Notification+.swift */,
+				6DCE191D2DA8AC5B00468C64 /* Decimal+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		6DFFA5EE2D811ECB006196B6 = {
@@ -419,16 +475,21 @@
 			files = (
 				6DA8F0D52D9BC72A00C92B89 /* HotView.xib in Resources */,
 				6DD7ACA02D9CEF1C00D28A54 /* StarView.xib in Resources */,
+				6DEE05FF2DA4C533007BC426 /* DoubleSliderView.xib in Resources */,
 				6DA4B40C2DA3C515006E36AA /* LocationTableViewCell.xib in Resources */,
 				6DA4B4132DA3C549006E36AA /* PriceTableViewCell.xib in Resources */,
 				6DD7AC922D9CC35E00D28A54 /* OverAllView.xib in Resources */,
 				6DD7AC962D9CCCD200D28A54 /* MemberView.xib in Resources */,
+				6DA9B85F2DAC8D1400D19E84 /* SortMenuView.xib in Resources */,
+				6DC05E212DA745C900335C63 /* TrainView.xib in Resources */,
+				6DC05E242DA766C200335C63 /* SearchResultViewCell.xib in Resources */,
 				6DA8F0C72D9BA33700C92B89 /* HotelList.json in Resources */,
 				6DA8F0D02D9BC44D00C92B89 /* HotelSearchTableViewCell.xib in Resources */,
 				6DA4B4102DA3C532006E36AA /* TrainTableViewCell.xib in Resources */,
 				6DA4B4072DA3C4FB006E36AA /* StarsTableViewCell.xib in Resources */,
 				6DA4B4172DA3C571006E36AA /* SearchNameTableViewCell.xib in Resources */,
 				6DA4B4042DA3C4D5006E36AA /* CategoryTableViewCell.xib in Resources */,
+				6DCE191A2DA8992B00468C64 /* SelectSortedView.xib in Resources */,
 				6DA8F0CA2D9BBBA900C92B89 /* HotelSearchViewController.xib in Resources */,
 				6DA4B2282DA3A522006E36AA /* FilterViewController.xib in Resources */,
 			);
@@ -456,21 +517,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DA4B4182DA3C571006E36AA /* SearchNameTableViewCell.swift in Sources */,
+				6DA9B85D2DAC8D0600D19E84 /* SortMenuView.swift in Sources */,
+				6DA9B8612DAC9AFC00D19E84 /* SortMenuViewModel.swift in Sources */,
 				6DA4B4082DA3C4FB006E36AA /* StarsTableViewCell.swift in Sources */,
 				6DD7AC9E2D9CECE500D28A54 /* StarView.swift in Sources */,
 				6DA8F0C32D9BA2C500C92B89 /* HotelAPIManager.swift in Sources */,
 				6DA8F0D12D9BC44D00C92B89 /* HotelSearchTableViewCell.swift in Sources */,
 				6DA8F0C52D9BA31500C92B89 /* Hotel.swift in Sources */,
 				6DA8F0CB2D9BBBA900C92B89 /* HotelSearchViewController.swift in Sources */,
+				6DC05E272DA7776600335C63 /* TrainViewModel.swift in Sources */,
 				6DA8F0CD2D9BBBBD00C92B89 /* HotelSearchViewModel.swift in Sources */,
 				6DA4B40B2DA3C515006E36AA /* LocationTableViewCell.swift in Sources */,
+				6DCE191E2DA8AC5B00468C64 /* Decimal+.swift in Sources */,
 				6DA4B4032DA3C4D5006E36AA /* CategoryTableViewCell.swift in Sources */,
+				6DEE05FD2DA4C524007BC426 /* DoubleSliderView.swift in Sources */,
 				6DA4B40F2DA3C532006E36AA /* TrainTableViewCell.swift in Sources */,
 				6DA4B4142DA3C549006E36AA /* PriceTableViewCell.swift in Sources */,
+				6DBD045F2DA662D700191CCA /* FilterViewModel.swift in Sources */,
+				6DBD04622DA676D600191CCA /* UIButton+.swift in Sources */,
 				6DA4B2292DA3A522006E36AA /* FilterViewController.swift in Sources */,
 				6DD7AC902D9CC27700D28A54 /* OverAllView.swift in Sources */,
 				6DA8F0D32D9BC71D00C92B89 /* HotView.swift in Sources */,
+				6DC05E252DA766C200335C63 /* SearchResultViewCell.swift in Sources */,
+				6DC05E1F2DA745BC00335C63 /* TrainView.swift in Sources */,
 				6DD7AC942D9CCCBB00D28A54 /* MemberView.swift in Sources */,
+				6DCE19182DA8991F00468C64 /* SelectSortedView.swift in Sources */,
+				6DCE191C2DA8A17000468C64 /* Notification+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

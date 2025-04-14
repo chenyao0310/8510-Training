@@ -9,15 +9,22 @@ import UIKit
 
 class TrainTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var trainView: TrainView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func configure() {
+        awakeFromNib()
+    }
+    
+}
+
+extension TrainTableViewCell {
+
+    
+    private func setupView() {
+        
+    }
 }

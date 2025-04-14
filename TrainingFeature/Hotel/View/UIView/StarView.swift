@@ -56,15 +56,12 @@ extension StarView {
             if Int(rating) > index {
                 count -= 1
                 star.image = UIImage(named: "hotel_star_full")
-                print(star.image ?? nil)
-                print("\(Int(rating)) > \(index)")
             } else if count == 0.5 {
                 count -= 0.5
                 star.image = UIImage(named: "hotel_star_half")
             } else {
                 star.isHidden = true
                 star.image = nil
-                print("Done")
             }
         }
     }

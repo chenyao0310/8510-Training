@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelSearchViewController" customModule="_510_Training" customModuleProvider="target">
             <connections>
                 <outlet property="filter" destination="c0M-HA-bOh" id="baD-6T-2R6"/>
+                <outlet property="headerView" destination="j8L-ja-vX7" id="hyM-sX-F3b"/>
                 <outlet property="sorted" destination="dLk-2o-sVE" id="Kvw-1H-wwX"/>
                 <outlet property="tableView" destination="EvK-3d-KU4" id="BNM-IU-Ce8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -94,8 +95,9 @@
                         <constraint firstAttribute="bottom" secondItem="3FS-5e-gt6" secondAttribute="bottom" constant="16" id="pBw-yE-Ozi"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EvK-3d-KU4">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EvK-3d-KU4">
                     <rect key="frame" x="0.0" y="111" width="393" height="741"/>
+                    <color key="backgroundColor" red="0.94943994279999999" green="0.94891542200000001" blue="0.96749216319999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
