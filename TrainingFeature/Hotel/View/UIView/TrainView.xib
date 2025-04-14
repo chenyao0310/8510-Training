@@ -9,13 +9,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrainView" customModule="_510_Training" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundView" destination="j8v-Bh-eNu" id="FKG-bc-hoF"/>
+                <outlet property="backgroundView" destination="j8v-Bh-eNu" id="VhJ-HO-VsM"/>
                 <outlet property="train" destination="6Ck-9a-VpF" id="t0d-8X-Afk"/>
                 <outlet property="trainLabel" destination="aZg-Zy-IBZ" id="AfV-qh-7x9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="iN0-l3-epB">
+        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="iN0-l3-epB" userLabel="ContentView">
             <rect key="frame" x="0.0" y="0.0" width="160" height="31"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>

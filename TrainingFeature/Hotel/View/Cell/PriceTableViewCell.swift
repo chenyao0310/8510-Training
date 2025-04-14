@@ -9,7 +9,6 @@ import UIKit
 
 class PriceTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var maxPrice: UILabel!
     @IBOutlet weak var minPrice: UILabel!
     @IBOutlet weak var price: DoubleSliderView!

@@ -8,8 +8,7 @@
 import Foundation
 
 extension Notification.Name {
-    static let didUpdateLowestPrice = Notification.Name("didUpdateLowestPrice")
-    static let didUpdateHighestPrice = Notification.Name("didUpdateHighestPrice")
+    static let trainViewStateChange = Notification.Name("trainViewStateChange")
 }
 
 

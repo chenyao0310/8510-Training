@@ -13,45 +13,50 @@ class HotelSearchViewModel { // MainViewModel
     
     var hotels: [Hotel_List]? = []
     var sortType: SortType = .defaultSort
+    var lowestPrice: Int?
+    var highestPrice: Int?
     var dataIsChange: (() -> Void)?
     var sortTypeIsChange: ((SortType) -> Void)?
-    var isTrainhadTap: (() -> Void)?
+    var isTrainhadTap: ((Bool) -> Void)?
     var isUseFilter: Bool = false
     var isTrainSelected: Bool = false
-    var isUseSort: Bool = false
     
     var sortedOverlay: SortMenuView?
     
-    private let filterViewModel: FilterViewModel = .shared
+//    private let filterViewModel: FilterViewModel = .shared
     private let manager: HotelAPIManager = .shared
     
     init() {
         defaultHotel() // 預設飯店
+        print("一共 \(hotels?.count ?? 0) 筆資料")
+        lowestPrice = manager.lowestPrice
+        highestPrice = manager.highestPrice
         manager.hotelsDidChange = { [weak self] data in
             self?.hotels = data
-            print("一共 \(data.count) 筆資料")
             self?.dataIsChange?() // 給 ViewController
         }
     }
     
     func defaultHotel() {
         hotels = manager.hotels
-        print("一共 \(hotels?.count ?? 0) 筆資料")
     }
     
     func fetchHotels() -> [Hotel_List] {
         guard let data = manager.hotels else { return [] }
-//        print("一共 \(hotels?.count ?? 0) 筆資料")
         return data
     }
     
     func hotelsCondition() {
         defaultHotel()
         if isUseFilter {
-            hotelsFilter(min: 1, max: 1)
-        } else if isTrainSelected {
+            hotelsFilter(min: lowestPrice ?? 0, max: highestPrice ?? 0)
+        }
+        if isTrainSelected {
             searchTrain()
-        } else if isUseSort {
+        }
+        if sortType == .lowPriceFirst {
+            hotelsSort()
+        } else if sortType == .highPriceFirst {
             hotelsSort()
         }
         print("一共 \(hotels?.count ?? 0) 筆資料")
@@ -62,13 +67,9 @@ class HotelSearchViewModel { // MainViewModel
         switch sortType {
         case .lowPriceFirst:
             hotels = hotels?.sorted { $0.TWD_RetailPrice_Value < $1.TWD_RetailPrice_Value }
-            self.dataIsChange?()
         case .highPriceFirst:
             hotels = hotels?.sorted { $0.TWD_RetailPrice_Value > $1.TWD_RetailPrice_Value }
-            self.dataIsChange?()
         case .defaultSort:
-//            defaultHotel()
-//            self.dataIsChange?()
             ()
         }
     }
@@ -81,11 +82,24 @@ class HotelSearchViewModel { // MainViewModel
         if isTrainSelected {
             manager.searchTrain()
         } else {
-            defaultHotel()
             self.dataIsChange?()
         }
     }
+    
+    func defaultLowestPrice() -> Int? {
+        return manager.lowestPrice
+    }
+    
+    func defaultHighestPrice() -> Int? {
+        return manager.highestPrice
+    }
+    
+    func defaultTrainSelected () -> Bool {
+        return isTrainSelected
+    }
+        
 }
+
 
 extension HotelSearchViewModel {
     
@@ -93,6 +107,10 @@ extension HotelSearchViewModel {
         case lowPriceFirst
         case highPriceFirst
         case defaultSort
+    }
+    
+    private func defaultPrice() {
+        
     }
     
     private func hotelsFilter(min:Int, max:Int) {

@@ -13,15 +13,15 @@ class TrainViewModel {
     
     private let hotelViewModel: HotelSearchViewModel = .shared
     
-    var isSelected: Bool = false
+    var isSelectedDidChange: (() -> Void)?
     
-    var onSelected: ((Bool) -> Void)?
+    var isSelected: Bool = false
     
     init() {
         self.isSelected = hotelViewModel.isTrainSelected
-    }
-    
-    func updateSelected() {
-        hotelViewModel.isTrainSelected = self.isSelected
+        hotelViewModel.isTrainhadTap = { [weak self] bool in
+            self?.isSelected = bool
+            self?.isSelectedDidChange?()
+        }
     }
 }

@@ -192,14 +192,15 @@ extension HotelSearchViewController: UITableViewDataSource {
 
 
 protocol HotelSearchViewControllerDelegate: AnyObject {
-//    func taninIsSelected()
-    func train()
+    func didTouchtrain(_ bool: Bool)
     func sortMenuDismiss()
 }
 
 extension HotelSearchViewController: HotelSearchViewControllerDelegate {
-    func train() {
-        viewModel.filterTrain()
+    func didTouchtrain(_ bool: Bool) {
+        viewModel.isTrainSelected = bool
+        viewModel.hotelsCondition()
+        
     }
     
     func sortMenuDismiss() {

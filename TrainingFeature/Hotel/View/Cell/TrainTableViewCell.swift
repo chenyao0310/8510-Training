@@ -8,23 +8,23 @@
 import UIKit
 
 class TrainTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var trainView: TrainView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configure()
     }
     
     func configure() {
-        awakeFromNib()
+   
+//        addSubview(trainView)
+//        trainView.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        NSLayoutConstraint.activate([
+//            trainView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+//            trainView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20),
+//            trainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+//        ])
+//        
     }
     
-}
-
-extension TrainTableViewCell {
-
-    
-    private func setupView() {
-        
-    }
 }

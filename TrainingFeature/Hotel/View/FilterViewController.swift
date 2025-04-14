@@ -80,6 +80,7 @@ extension FilterViewController {
     
     @objc private func back() {
         viewModel.isRefresh = false
+        viewModel.returnToDefault()
         dismiss(animated: true)
     }
     
@@ -90,7 +91,7 @@ extension FilterViewController {
     
     @objc private func onTouchCancel() {
         viewModel.clear()
-        self.tableView.reloadData()
+            self.tableView.reloadData()
     }
     
 // MARK: - TableView
@@ -151,7 +152,6 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
          headerView.backgroundColor = .clear
          var configuration = headerView.defaultContentConfiguration()
          configuration.textProperties.font = .systemFont(ofSize: 14, weight: .regular)
-         
          
          switch section {
          case 0:

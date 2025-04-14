@@ -46,7 +46,6 @@ class HotelSearchTableViewCell: UITableViewCell {
     }
 }
 
-
 extension HotelSearchTableViewCell {
     
 // MARK: - UI

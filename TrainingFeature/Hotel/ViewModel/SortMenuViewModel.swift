@@ -21,6 +21,6 @@ class SortMenuViewModel {
     
     func updateSortType(_ type: HotelSearchViewModel.SortType){
         hotelViewModel.sortType = self.sortType
-        hotelViewModel.hotelsSort()
+        hotelViewModel.hotelsCondition()
     }
 }
