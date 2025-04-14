@@ -9,6 +9,8 @@ import UIKit
 
 class OverAllView: UIView {
     
+    @IBOutlet weak var contentView: UIView!
+    
     @IBOutlet weak var number: UILabel!
     
     override func awakeFromNib() {
@@ -34,10 +36,20 @@ class OverAllView: UIView {
 extension OverAllView {
     
     private func setupView() {
+//        Bundle.main.loadNibNamed("OverAllView", owner: self, options: nil)
         let view = UINib(nibName: "OverAllView", bundle: Bundle(for: type(of: self))).instantiate(withOwner: self, options: nil)[0] as! UIView
+        self.contentView = view
         view.bounds = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.layer.cornerRadius = 5
         addSubview(view)
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
     }
 }
