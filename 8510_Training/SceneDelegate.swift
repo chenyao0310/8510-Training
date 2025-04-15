@@ -22,8 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let bookingViewController = UINavigationController(rootViewController: BookingViewController())
         let chatViewController = UINavigationController(rootViewController: ChatViewController())
         let cityViewController = UINavigationController(rootViewController: CityViewController())
+        let hotelViewController = UINavigationController(rootViewController: HotelSearchViewController())
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = loginViewController
+        window?.rootViewController = hotelViewController
         window?.makeKeyAndVisible()
     }
 

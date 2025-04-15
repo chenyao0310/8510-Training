@@ -1,0 +1,32 @@
+{
+  "ModuleItem_List": [
+    {
+      "Item_Text": "大阪",
+      "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/8/43.jpg?20190125101709"
+    },
+    {
+      "Item_Text": "京都",
+      "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/8/44.jpg?20190125101738"
+    },
+    {
+      "Item_Text": "首爾",
+      "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/8/45.jpg?20190125102436"
+    },
+    {
+      "Item_Text": "釜山",
+      "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/8/46.jpg?20190125102451"
+    },
+    {
+      "Item_Text": "香港",
+      "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/8/124.jpg?20190130120224"
+    },
+    {
+      "Item_Text": "上海",
+      "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/8/131.jpg?20190109145925"
+    },
+    {
+      "Item_Text": "台北",
+      "Pic_Url": "https://fpc.colatour.org/Cola_AppFiles/M00C_Portal/Module/8/128.jpg?20190130141503"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ class ModuleItemCollectionViewCell: UICollectionViewCell {
     
         let url = URL(string: data.Pic_Url)
         self.title.text = data.Item_Text
-        self.price.text = "$\(data.Item_Price.formatted(.number))"
+        self.price.text = "$\(data.Item_Price?.formatted(.number) ?? "")"
         self.image.loadImage(url: url, placeholder: UIImage(named: "Hello") ?? nil)
     }
 }
