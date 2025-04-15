@@ -1,0 +1,288 @@
+{
+  "Country_List": [
+    {
+      "Country_Code": "TW",
+      "Country_Name": "台灣",
+      "City_List": [
+        {
+          "City_Code": "TW19",
+          "City_Name": "基隆"
+        },
+        {
+          "City_Code": "TW01",
+          "City_Name": "台北"
+        },
+        {
+          "City_Code": "TW06",
+          "City_Name": "桃園"
+        },
+        {
+          "City_Code": "TW05",
+          "City_Name": "新竹"
+        },
+        {
+          "City_Code": "TW07",
+          "City_Name": "苗栗"
+        },
+        {
+          "City_Code": "TW02",
+          "City_Name": "台中"
+        },
+        {
+          "City_Code": "TW08",
+          "City_Name": "彰化"
+        },
+        {
+          "City_Code": "TW11",
+          "City_Name": "南投"
+        },
+        {
+          "City_Code": "TW09",
+          "City_Name": "雲林"
+        },
+        {
+          "City_Code": "TW10",
+          "City_Name": "嘉義"
+        },
+        {
+          "City_Code": "TW03",
+          "City_Name": "台南"
+        },
+        {
+          "City_Code": "TW04",
+          "City_Name": "高雄"
+        },
+        {
+          "City_Code": "TW18",
+          "City_Name": "屏東"
+        },
+        {
+          "City_Code": "TW13",
+          "City_Name": "宜蘭"
+        },
+        {
+          "City_Code": "TW14",
+          "City_Name": "花蓮"
+        },
+        {
+          "City_Code": "TW12",
+          "City_Name": "台東"
+        },
+        {
+          "City_Code": "TW15",
+          "City_Name": "澎湖"
+        },
+        {
+          "City_Code": "TW16",
+          "City_Name": "金門"
+        },
+        {
+          "City_Code": "TW17",
+          "City_Name": "馬祖"
+        }
+      ]
+    },
+    {
+      "Country_Code": "JP",
+      "Country_Name": "日本",
+      "City_List": [
+        {
+          "City_Code": "JP01",
+          "City_Name": "關東"
+        },
+        {
+          "City_Code": "JP02",
+          "City_Name": "關西"
+        },
+        {
+          "City_Code": "JP35",
+          "City_Name": "九州"
+        },
+        {
+          "City_Code": "JP33",
+          "City_Name": "名古屋"
+        },
+        {
+          "City_Code": "JP04",
+          "City_Name": "北海道"
+        },
+        {
+          "City_Code": "JP05",
+          "City_Name": "沖繩"
+        }
+      ]
+    },
+    {
+      "Country_Code": "SG",
+      "Country_Name": "新加坡",
+      "City_List": [
+        {
+          "City_Code": "SG",
+          "City_Name": "新加坡"
+        }
+      ]
+    },
+    {
+      "Country_Code": "BK",
+      "Country_Name": "泰國",
+      "City_List": [
+        {
+          "City_Code": "BK01",
+          "City_Name": "曼谷"
+        },
+        {
+          "City_Code": "BK03",
+          "City_Name": "華欣"
+        },
+        {
+          "City_Code": "BK02",
+          "City_Name": "芭達雅"
+        },
+        {
+          "City_Code": "BK05",
+          "City_Name": "清邁"
+        },
+        {
+          "City_Code": "BK04",
+          "City_Name": "蘇梅島"
+        },
+        {
+          "City_Code": "BK06",
+          "City_Name": "普吉島"
+        }
+      ]
+    },
+    {
+      "Country_Code": "VN",
+      "Country_Name": "越南",
+      "City_List": [
+        {
+          "City_Code": "VN05",
+          "City_Name": "河內"
+        },
+        {
+          "City_Code": "VN08",
+          "City_Name": "下龍灣"
+        },
+        {
+          "City_Code": "VN03",
+          "City_Name": "順化"
+        },
+        {
+          "City_Code": "VN02",
+          "City_Name": "峴港"
+        },
+        {
+          "City_Code": "VN04",
+          "City_Name": "會安"
+        },
+        {
+          "City_Code": "VN07",
+          "City_Name": "芽莊"
+        },
+        {
+          "City_Code": "VN01",
+          "City_Name": "胡志明市"
+        },
+        {
+          "City_Code": "VN06",
+          "City_Name": "富國島"
+        }
+      ]
+    },
+    {
+      "Country_Code": "PH",
+      "Country_Name": "菲律賓",
+      "City_List": [
+        {
+          "City_Code": "PH01",
+          "City_Name": "馬尼拉"
+        },
+        {
+          "City_Code": "PH02",
+          "City_Name": "宿霧"
+        },
+        {
+          "City_Code": "PH03",
+          "City_Name": "巴拉望"
+        },
+        {
+          "City_Code": "PH04",
+          "City_Name": "長灘島"
+        },
+        {
+          "City_Code": "PH05",
+          "City_Name": "薄荷島"
+        }
+      ]
+    },
+    {
+      "Country_Code": "ID",
+      "Country_Name": "印尼",
+      "City_List": [
+        {
+          "City_Code": "ID01",
+          "City_Name": "巴里島"
+        }
+      ]
+    },
+    {
+      "Country_Code": "MY",
+      "Country_Name": "馬來西亞",
+      "City_List": [
+        {
+          "City_Code": "MY01",
+          "City_Name": "吉隆坡"
+        },
+        {
+          "City_Code": "MY02",
+          "City_Name": "新山"
+        },
+        {
+          "City_Code": "MY03",
+          "City_Name": "蘭卡威"
+        },
+        {
+          "City_Code": "MY04",
+          "City_Name": "檳城"
+        },
+        {
+          "City_Code": "MY05",
+          "City_Name": "馬六甲"
+        },
+        {
+          "City_Code": "MY06",
+          "City_Name": "沙巴"
+        }
+      ]
+    },
+    {
+      "Country_Code": "KR",
+      "Country_Name": "韓國",
+      "City_List": [
+        {
+          "City_Code": "KR01",
+          "City_Name": "首爾"
+        },
+        {
+          "City_Code": "KR02",
+          "City_Name": "釜山"
+        },
+        {
+          "City_Code": "KR06",
+          "City_Name": "京畿道"
+        }
+      ]
+    },
+    {
+      "Country_Code": "PW",
+      "Country_Name": "帛琉",
+      "City_List": [
+        {
+          "City_Code": "PW01",
+          "City_Name": "帛琉"
+        }
+      ]
+    }
+  ]
+}
