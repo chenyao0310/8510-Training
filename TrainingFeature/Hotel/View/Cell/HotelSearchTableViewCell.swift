@@ -125,6 +125,7 @@ extension HotelSearchTableViewCell {
         let view = HotView(frame: hotView.bounds)
         view.translatesAutoresizingMaskIntoConstraints = false
         hotView.addSubview(view)
+        
         setupConstraints(with: view, equalTo: hotView)
     }
     
@@ -133,8 +134,8 @@ extension HotelSearchTableViewCell {
         let view = OverAllView(frame: overAll.bounds)
         view.configure(with: string)
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         overAll.addSubview(view)
+        
         setupConstraints(with: view, equalTo: overAll)
     }
     
@@ -142,8 +143,8 @@ extension HotelSearchTableViewCell {
         guard let memberLabel = data?.Member_Label, memberLabel != "" else { return }
         let view = MemberView(frame: member.bounds)
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         member.addSubview(view)
+        
         setupConstraints(with: view, equalTo: member)
     }
     

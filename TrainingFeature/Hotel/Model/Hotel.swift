@@ -8,10 +8,14 @@
 import Foundation
 
 struct Hotel: Decodable {
-    var Hotel_List: [Hotel_List]
+    var hotelList: [Hotel_List]
+    
+    enum CodingKeys: String, CodingKey {
+        case hotelList = "Hotel_List"
+    }
 }
 
-struct Hotel_List: Decodable{
+struct Hotel_List: Decodable {
     var Add_On: [String]?
     var Short_Promotion: String
     var TWD_RetailPrice_Value: Int

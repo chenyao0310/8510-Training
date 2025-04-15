@@ -62,10 +62,6 @@ extension DoubleSliderView {
     private func setupLine() {
         line.layer.cornerRadius = 4
         line.isUserInteractionEnabled = false
-//        line.layer.shadowColor = UIColor.black.cgColor
-//        line.layer.shadowOpacity = 0.1
-//        line.layer.shadowOffset = .init(width: 0, height: 0)
-//        line.layer.masksToBounds = false
     }
     
 // MARK: - Button
@@ -92,6 +88,7 @@ extension DoubleSliderView {
     
     private func minButtonConfigura() {
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(minButtonPanGesture))
+        
         minCircle.layer.shadowColor = UIColor.black.cgColor
         minCircle.layer.shadowOpacity = 0.1
         minCircle.layer.shadowOffset = .init(width: 1, height: 1)
@@ -104,7 +101,6 @@ extension DoubleSliderView {
             let betweenPrice: Decimal = highPrice - lowPrice // 價錢區間
             let long = line.frame.width - 20 // 減掉球兩個的半徑
             let percentage = Decimal(buttonPosition / long) // 百分比
-            //        print(persent * betweenPrice)
             let string = (percentage * betweenPrice + highPrice).toInteger()
             self.maxPriceDidChange?(string)
         } else {
@@ -148,7 +144,6 @@ extension DoubleSliderView {
         positionPrice(.min)
         self.layoutIfNeeded()
     }
-    
 }
 
 

@@ -24,19 +24,17 @@ class OverAllView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     func configure(with number: String) {
         self.number.text = number
     }
-
 }
 
 extension OverAllView {
     
     private func setupView() {
-//        Bundle.main.loadNibNamed("OverAllView", owner: self, options: nil)
         let view = UINib(nibName: "OverAllView", bundle: Bundle(for: type(of: self))).instantiate(withOwner: self, options: nil)[0] as! UIView
         self.contentView = view
         view.bounds = bounds

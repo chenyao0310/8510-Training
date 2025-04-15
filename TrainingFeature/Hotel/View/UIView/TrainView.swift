@@ -91,8 +91,10 @@ extension TrainView {
     
    @objc private func onTouchView() {
        viewModel.isSelected.toggle()
-       print(viewModel.isSelected)
        self.updateUI()
-       delegate?.didTouchtrain(viewModel.isSelected)
+       if delegate != nil {
+           viewModel.updateTrainSelected(viewModel.isSelected)
+           delegate?.changeFilterTitleColor()
+       }
     }
 }

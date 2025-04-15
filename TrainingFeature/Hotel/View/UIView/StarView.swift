@@ -26,6 +26,7 @@ class StarView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
+        stars = [one, two, three, four, five]
     }
     
     override init(frame: CGRect) {
@@ -46,7 +47,6 @@ extension StarView {
         view.bounds = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
-        stars = [one, two, three, four, five]
     }
     
     private func updateStars() {

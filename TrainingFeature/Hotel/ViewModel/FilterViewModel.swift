@@ -7,58 +7,54 @@
 
 import Foundation
 
-class FilterViewModel { // SubViewModel
+class FilterViewModel { 
     
     static let shared = FilterViewModel()
     
     private let hotelViewModel: HotelSearchViewModel = .shared
+    private let trainViewModel: TrainViewModel = .shared
     
     var defaultHighestPosition: CGFloat?
     var defaultLowestPosition: CGFloat?
     var defaultLowestPrice: Int?
     var defaultHighestPrice: Int?
-    var defaultTrainisSelected: Bool
+    var defaultTrainisSelected: Bool?
+    
+    var isTrainSelected: Bool?
 
     var lowestPrice: Int?
     var highestPrice: Int?
     var isRefresh: Bool = false
     
-    var lowestPriceDidChange: ((Int) -> Void)?
-    var highestPriceDidChange: ((Int) -> Void)?
-    
     var highestPosition: CGFloat?
     var LowestPosition: CGFloat?
-    
-    var confirmDidTap: (() -> Void)?
     
     private let manager: HotelAPIManager = .shared
     
     init() {
-        defaultHighestPosition = 0
-        defaultLowestPosition = 0
-        defaultLowestPrice = manager.lowestPrice
-        defaultHighestPrice = manager.highestPrice
-        
-        defaultTrainisSelected = hotelViewModel.isTrainSelected
-        print("de   \(defaultTrainisSelected)")
-        lowestPrice = manager.lowestPrice
-        highestPrice = manager.highestPrice
+        defaultInitial()
     }
  
+    // 確認後更改到 hotelViewModel
     func confirm() {
-        confirmDidTap?() // 按鈕確認
         hotelViewModel.lowestPrice = self.lowestPrice
         hotelViewModel.highestPrice = self.highestPrice
-        hotelViewModel.isUseFilter = true
+        hotelViewModel.isUseFilter = isUseFilter()
+        hotelViewModel.isTrainSelected = trainViewModel.isSelected // 為了讓 hotelViewModel 正確更新
         hotelViewModel.hotelsCondition()
+        
         isRefresh = false
     }
     
+    // 唯獨自己更新
     func clear() {
-        hotelViewModel.isUseFilter = false
-        hotelViewModel.isTrainSelected = false
+        hotelViewModel.isUseFilter = isUseFilter()
         hotelViewModel.isTrainhadTap?(false)
+        lowestPrice = defaultLowestPrice
+        highestPrice = defaultHighestPrice
+        
         isRefresh = true
+        hotelViewModel.isUseFilter = isUseFilter()
     }
     
     func defaultRange() -> (min: Int, max: Int) {
@@ -79,17 +75,27 @@ class FilterViewModel { // SubViewModel
         hotelViewModel.isTrainhadTap?(false)
     }
     
-    
     func returnToDefault() {
         hotelViewModel.isTrainSelected = hotelViewModel.defaultTrainSelected()
         hotelViewModel.isTrainhadTap?(hotelViewModel.defaultTrainSelected())
     }
-    
-    func getlowestPrice() -> Int? {
-        return hotelViewModel.defaultLowestPrice()
+}
+
+
+extension FilterViewModel {
+
+    private func defaultInitial() {
+        defaultHighestPosition = 0
+        defaultLowestPosition = 0
+        defaultLowestPrice = manager.lowestPrice
+        defaultHighestPrice = manager.highestPrice
+        defaultTrainisSelected = hotelViewModel.isTrainSelected
+        isTrainSelected = hotelViewModel.isTrainSelected
+        lowestPrice = manager.lowestPrice
+        highestPrice = manager.highestPrice
     }
     
-    func getHighestPrice() -> Int? {
-        return hotelViewModel.defaultHighestPrice()
+    private func isUseFilter() -> Bool {
+        return manager.lowestPrice != lowestPrice || manager.highestPrice != highestPrice
     }
 }

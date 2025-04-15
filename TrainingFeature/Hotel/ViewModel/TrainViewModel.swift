@@ -19,9 +19,14 @@ class TrainViewModel {
     
     init() {
         self.isSelected = hotelViewModel.isTrainSelected
-        hotelViewModel.isTrainhadTap = { [weak self] bool in
+        hotelViewModel.isTrainhadTap = { [weak self] bool in // filterView 更新按鈕
             self?.isSelected = bool
-            self?.isSelectedDidChange?()
+            self?.isSelectedDidChange?() // 更新 UI
         }
+    }
+    
+    func updateTrainSelected(_ bool: Bool) {
+        hotelViewModel.isTrainSelected = bool
+        hotelViewModel.hotelsCondition()
     }
 }

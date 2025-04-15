@@ -9,6 +9,8 @@ import UIKit
 
 class MemberView: UIView {
     
+    @IBOutlet weak var contentView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -20,15 +22,25 @@ class MemberView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
 }
 
 extension MemberView {
     private func setupView() {
         let view = Bundle.main.loadNibNamed("MemberView", owner: self, options: nil)?.first as! UIView
+        
+        self.contentView = view
         view.bounds = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
     }
 }

@@ -10,9 +10,6 @@ import UIKit
 class SearchResultViewCell: UITableViewCell {
 
     @IBOutlet weak var result: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     
     func configura(with text: String){
         let fullString = "共(\(text))筆結果"
@@ -24,11 +21,3 @@ class SearchResultViewCell: UITableViewCell {
         result.font = .systemFont(ofSize: 14, weight: .regular)
     }
 }
-
-
-/*
- 
- cell.configura(with: String(viewModel.hotels?.count ?? 0))
- 
- 
- */

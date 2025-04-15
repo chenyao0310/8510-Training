@@ -21,11 +21,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="24" estimatedSectionHeaderHeight="-1" sectionFooterHeight="24" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EM6-6T-u0o">
-                    <rect key="frame" x="0.0" y="59" width="393" height="719"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="715"/>
                     <color key="backgroundColor" red="0.94943994279999999" green="0.94891542200000001" blue="0.96749216319999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3D-us-Xzw" userLabel="Confirm">
-                    <rect key="frame" x="20" y="786" width="353" height="32"/>
+                    <rect key="frame" x="20" y="782" width="353" height="32"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="篩選">
                         <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
@@ -37,7 +37,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="S3D-us-Xzw" firstAttribute="top" secondItem="EM6-6T-u0o" secondAttribute="bottom" constant="8" id="GzA-C3-psa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="S3D-us-Xzw" secondAttribute="bottom" id="LDi-aj-TFT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="S3D-us-Xzw" secondAttribute="bottom" constant="4" id="LDi-aj-TFT"/>
                 <constraint firstItem="S3D-us-Xzw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="N86-d4-2xh"/>
                 <constraint firstAttribute="trailing" secondItem="EM6-6T-u0o" secondAttribute="trailing" id="XA2-04-h8D"/>
                 <constraint firstAttribute="trailing" secondItem="S3D-us-Xzw" secondAttribute="trailing" constant="20" id="eLV-19-Cgn"/>

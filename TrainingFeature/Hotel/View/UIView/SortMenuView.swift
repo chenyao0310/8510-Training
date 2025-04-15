@@ -37,31 +37,19 @@ class SortMenuView: UIView {
       }
     }
 
-
 extension SortMenuView {
     
+// MARK: - View
+    
     private func setupView() {
-        //    let nib = UINib(nibName: "SortedView", bundle: Bundle(for: type(of: self)))
-        //    guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else { return }
-        //    view.backgroundColor = .black.withAlphaComponent(0.5)
-        //    view.bounds = bounds
-        //    addSubview(view)
-        //    NSLayoutConstraint.activate([
-        //        view.topAnchor.constraint(equalTo: self.topAnchor),
-        //        view.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-        //        view.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-        //        view.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        //    ])
         Bundle.main.loadNibNamed("SortMenuView", owner: self, options: nil)
         contentView.backgroundColor = .black.withAlphaComponent(0.5)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(contentView)
-        //    contentView.bounds = self.bounds
-        //    contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissSelf))
         contentView.addGestureRecognizer(tap)
         
-        
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -81,16 +69,29 @@ extension SortMenuView {
         lowPriceFirst.font = UIFont.systemFont(ofSize: 17)
         lowPriceFirst.textColor = viewModel.sortType == .lowPriceFirst ? .purple : .label
         lowPriceFirst.isUserInteractionEnabled = true
+        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTouchlowPriceFirst))
         lowPriceFirst.addGestureRecognizer(gestureRecognizer)
     }
     
     private func highPriceFirstConfigura() {
         highPriceFirst.font = UIFont.systemFont(ofSize: 17)
-        highPriceFirst.isUserInteractionEnabled = true
         highPriceFirst.textColor = viewModel.sortType == .highPriceFirst ? .purple : .label
+        highPriceFirst.isUserInteractionEnabled = true
+        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTouchighPriceFirst))
         highPriceFirst.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    private func updataLabelAndState(with label: UILabel, type: HotelSearchViewModel.SortType) {
+        if viewModel.sortType != type {
+            viewModel.sortType = type
+            viewModel.updateSortType(type)
+            label.textColor = viewModel.sortType == type ? .purple : .label
+        } else {
+            viewModel.sortType = .defaultSort
+            viewModel.updateSortType(.defaultSort)
+        }
     }
     
     @objc private func dismissSelf() {
@@ -99,28 +100,13 @@ extension SortMenuView {
     
     @objc private func onTouchlowPriceFirst() {
         delegate?.sortMenuDismiss()
-        self.removeFromSuperview()
-        if viewModel.sortType != .lowPriceFirst {
-            viewModel.sortType = .lowPriceFirst
-            viewModel.updateSortType(.lowPriceFirst)
-            lowPriceFirst.textColor = viewModel.sortType == .lowPriceFirst ? .purple : .label
-        } else {
-            viewModel.sortType = .defaultSort
-            viewModel.updateSortType(.defaultSort)
-        }
+        dismissSelf()
+        updataLabelAndState(with: lowPriceFirst, type: .lowPriceFirst)
     }
     
     @objc private func onTouchighPriceFirst() {
         delegate?.sortMenuDismiss()
-        self.removeFromSuperview()
-        if viewModel.sortType != .highPriceFirst{
-            viewModel.sortType = .highPriceFirst
-            viewModel.updateSortType(.highPriceFirst)
-        } else {
-            viewModel.sortType = .defaultSort
-            viewModel.updateSortType(.defaultSort)
-        }
+        dismissSelf()
+        updataLabelAndState(with: highPriceFirst, type: .highPriceFirst)
     }
-    
-    
 }

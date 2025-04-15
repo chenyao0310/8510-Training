@@ -20,7 +20,8 @@ class HotView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setupView()
     }
 }
 
@@ -31,9 +32,7 @@ extension HotView {
         let view = UINib(nibName: "HotView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
         view.bounds = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        view.layer.opacity = 0.5
         view.layer.cornerRadius = 4
         addSubview(view)
-    
     }
 }

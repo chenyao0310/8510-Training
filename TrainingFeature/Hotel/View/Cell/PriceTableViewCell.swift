@@ -8,7 +8,7 @@
 import UIKit
 
 class PriceTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var maxPrice: UILabel!
     @IBOutlet weak var minPrice: UILabel!
     @IBOutlet weak var price: DoubleSliderView!
@@ -18,16 +18,14 @@ class PriceTableViewCell: UITableViewCell {
     
     func configure(viewModel: FilterViewModel, isRefresh: Bool) {
         
-        if lowPrice == nil && highPrice == nil {
-            lowPrice = viewModel.lowestPrice ?? 0
-            highPrice = viewModel.highestPrice ?? 0
-        }
+        lowPrice = isRefresh ? viewModel.defaultLowestPrice ?? 0 : viewModel.lowestPrice ?? 0
+        highPrice = isRefresh ? viewModel.defaultHighestPrice ?? 0 : viewModel.highestPrice ?? 0
         
         // 顯示
         setupMaxAndMinPrice(min: !isRefresh ? viewModel.lowestPrice ?? 0 : viewModel.defaultLowestPrice ?? 0,
                             max: !isRefresh ? viewModel.highestPrice ?? 0 : viewModel.defaultHighestPrice ?? 0)
         
-        //位置
+        // 位置
         price.maxCircleXConstraint.constant = !isRefresh ? viewModel.highestPosition ?? 0 : viewModel.defaultHighestPosition ?? 0
         price.minCircleXConstraint.constant = !isRefresh ? viewModel.LowestPosition ?? 0 : viewModel.defaultLowestPosition ?? 0
         // 左右邊
@@ -45,19 +43,16 @@ class PriceTableViewCell: UITableViewCell {
             self?.lowPrice = price
             viewModel.isRefresh = false
         }
-        viewModel.confirmDidTap = {
-            if viewModel.isRefresh {
-                viewModel.defaultFilter()
-            } else {
-                viewModel.lowestPrice = self.lowPrice
-                viewModel.highestPrice = self.highPrice
-                viewModel.changeRange(min: self.price.minCircleXConstraint.constant,
-                                      max: self.price.maxCircleXConstraint.constant)
-            }
-            print("lowPrice: \(viewModel.lowestPrice ?? 0), highPrice: \(viewModel.highestPrice ?? 0)")
-        }
+    }
+    
+     func updateViewModel(_ viewModel: FilterViewModel) {
+         viewModel.lowestPrice = self.lowPrice
+         viewModel.highestPrice = self.highPrice
+         viewModel.changeRange(min: price.minCircleXConstraint.constant,
+                              max: price.maxCircleXConstraint.constant)
     }
 }
+
 
 extension PriceTableViewCell {
     
@@ -65,8 +60,6 @@ extension PriceTableViewCell {
         minPrice.text = "$\(min.formatted(.number))"
         maxPrice.text = "$\(max.formatted(.number))"
     }
-    
-    
 }
 
 
