@@ -11,16 +11,10 @@ class SortMenuViewModel {
     
     static let shared: SortMenuViewModel = SortMenuViewModel()
     
-    var sortType: HotelSearchViewModel.SortType = .defaultSort
-    
-    private let hotelViewModel: HotelSearchViewModel = .shared
+    var sortType: SortType = .defaultSort
+    var sendSrotType: ((SortType) -> Void)?
 
-    init() {
-        self.sortType = hotelViewModel.sortType
-    }
-    
-    func updateSortType(_ type: HotelSearchViewModel.SortType){
-        hotelViewModel.sortType = self.sortType
-        hotelViewModel.hotelsCondition()
+    func updateSortType(_ type: SortType){
+        sendSrotType?(type)
     }
 }

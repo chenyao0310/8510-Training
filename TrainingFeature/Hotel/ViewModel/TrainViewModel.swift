@@ -11,22 +11,13 @@ class TrainViewModel {
     
     static let shared: TrainViewModel = TrainViewModel()
     
-    private let hotelViewModel: HotelSearchViewModel = .shared
-    
+    var filterTrainDidChange: (() -> Void)?
+    var trainSelectedDidChange: ((Bool) -> Void)?
     var isSelectedDidChange: (() -> Void)?
     
     var isSelected: Bool = false
     
-    init() {
-        self.isSelected = hotelViewModel.isTrainSelected
-        hotelViewModel.isTrainhadTap = { [weak self] bool in // filterView 更新按鈕
-            self?.isSelected = bool
-            self?.isSelectedDidChange?() // 更新 UI
-        }
-    }
-    
     func updateTrainSelected(_ bool: Bool) {
-        hotelViewModel.isTrainSelected = bool
-        hotelViewModel.hotelsCondition()
+        trainSelectedDidChange?(bool)
     }
 }

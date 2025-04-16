@@ -83,7 +83,7 @@ extension SortMenuView {
         highPriceFirst.addGestureRecognizer(gestureRecognizer)
     }
     
-    private func updataLabelAndState(with label: UILabel, type: HotelSearchViewModel.SortType) {
+    private func updataLabelAndState(with label: UILabel, type: SortType) {
         if viewModel.sortType != type {
             viewModel.sortType = type
             viewModel.updateSortType(type)

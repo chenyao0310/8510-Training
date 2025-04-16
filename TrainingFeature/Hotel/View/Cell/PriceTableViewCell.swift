@@ -29,8 +29,8 @@ class PriceTableViewCell: UITableViewCell {
         price.maxCircleXConstraint.constant = !isRefresh ? viewModel.highestPosition ?? 0 : viewModel.defaultHighestPosition ?? 0
         price.minCircleXConstraint.constant = !isRefresh ? viewModel.LowestPosition ?? 0 : viewModel.defaultLowestPosition ?? 0
         // 左右邊
-        price.lowPrice = Decimal(Double(viewModel.defaultRange().min))
-        price.highPrice = Decimal(Double(viewModel.defaultRange().max))
+        price.lowPrice = Decimal(Double(viewModel.defaultPriceRange().min))
+        price.highPrice = Decimal(Double(viewModel.defaultPriceRange().max))
         
         // 改變
         price.maxPriceDidChange = { [weak self] price in

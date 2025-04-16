@@ -15,6 +15,8 @@ class HotelSearchViewController: UIViewController {
     @IBOutlet weak var sorted: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
+    
+    var sortedOverlay: SortMenuView?
      
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,13 +66,13 @@ extension HotelSearchViewController {
     }
     
     @objc func onTouchSorted() {
-        if let overlay = viewModel.sortedOverlay {
+        if let overlay = sortedOverlay {
             // 淡出動畫並移除
             UIView.animate(withDuration: 0.25, animations: {
                 overlay.alpha = 0
             }, completion: { _ in
                 overlay.removeFromSuperview()
-                self.viewModel.sortedOverlay = nil
+                self.sortedOverlay = nil
                })
         } else {
             let overlay = SortMenuView()
@@ -86,7 +88,7 @@ extension HotelSearchViewController {
                 overlay.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
 
-            self.viewModel.sortedOverlay = overlay
+            self.sortedOverlay = overlay
 
             UIView.animate(withDuration: 0.25) {
                 overlay.alpha = 1
@@ -192,7 +194,7 @@ extension HotelSearchViewController: HotelSearchViewControllerDelegate {
     }
     
     func sortMenuDismiss() {
-        viewModel.sortedOverlay = nil
+        sortedOverlay = nil
         viewModel.hotelsSort()
     }
 }
